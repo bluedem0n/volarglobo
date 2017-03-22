@@ -1,0 +1,15 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_guard_plugin:
+    routes_register:         false
+    success_signin_url:      /
+    success_signout_url:     /
+  proveedor_x_pag: 10
+  producto_x_pag: 25
+  producto_precio_x_pag: 25
+  servicio_x_pag: 25
+  proveedor_tiempo: 5000
+ 

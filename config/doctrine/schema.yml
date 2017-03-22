@@ -1,0 +1,8184 @@
+Empresa:
+  connection: doctrine
+  tableName: empresa
+  actAs:
+   Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    rif:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    dni:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nickname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    direccion_fiscal:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    telefono1:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    telefono2:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    email:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_nombre:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_puesto:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_telefono:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    idioma_id:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    sitio_web:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    politicas:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    privacidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    faq_titulo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    faq_contenido:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    quienes_titulo:
+      type: string(250)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    quienes_contenido:
+      type: string(250)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false  
+    quienes_imagen:
+      type: string(250)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false          
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    titulo:
+      type: string(250)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    nacionalidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    edo_civil:
+      type: string(200)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    ocupacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    grado_instruccion:
+      type: string(250)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+
+Pais:
+  connection: doctrine
+  tableName: pais
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    continente_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    codigo:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+
+TipoPersonal:
+  connection: doctrine
+  tableName: tipo_personal
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+
+RangoEdad:
+  connection: doctrine
+  tableName: rango_edad
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    rango_desde:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    rango_hasta:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    
+
+TipoTarifa:
+  connection: doctrine
+  tableName: tipo_tarifa
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    tipo_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cant_desde:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cant_hasta:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoVuelo:
+      local: tipo_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoTarifaPrecio:
+  connection: doctrine
+  tableName: tipo_tarifa_precio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    tipo_tarifa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    rango_edad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoTarifa:
+      local: tipo_tarifa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    RangoEdad:
+      local: rango_edad_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoCliente:
+  connection: doctrine
+  tableName: tipo_cliente
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+Proveedor:
+  connection: doctrine
+  tableName: proveedor
+  actAs:
+   Timestampable:
+   Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    ciudad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    categoria_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    rif:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    dni:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nickname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    direccion_fiscal:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    direccion_fisica:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    horario:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    telefono1:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    telefono2:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    email:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    website:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_nombre:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_puesto:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_telefono:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    logo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    video:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    redes_sociales:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    palabras_claves:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    destacado:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    click:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Provincia:
+      local: provincia_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    Ciudad:
+      local: ciudad_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    Categoria:
+      local: categoria_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+ProveedorSucursal:
+  connection: doctrine
+  tableName: proveedor_sucursal
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    direccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    horario:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+GaleriaProveedor:
+  connection: doctrine
+  tableName: galeria_proveedor
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+GaleriaDescuento:
+  connection: doctrine
+  tableName: galeria_descuento
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_descuento_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorDescuento:
+      local: proveedor_descuento_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+ProveedorDescuento:
+  connection: doctrine
+  tableName: proveedor_descuento
+  actAs:
+    Timestampable:
+    Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    tipo:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 0
+    categoria_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    proveedor_sucursal_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    condiciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fecha_limite:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fecha_activacion:
+      type: timestamp
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha_finalizacion:
+      type: timestamp
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    num_descuentos:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    comportamiento:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    aplicacion:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    precio_oferta:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    destacado:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    click:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    imagen_uno:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    imagen_dos:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    imagen_tres:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    imagen_cuatro:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    imagen_cinco:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false 
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Categoria:
+      local: categoria_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorSucursal:
+      local: proveedor_sucursal_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ProveedorRede:
+  connection: doctrine
+  tableName: proveedor_rede
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    rede_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    direccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Rede:
+      local: rede_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ProveedorPago:
+  connection: doctrine
+  tableName: proveedor_pago
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    pago_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Proveedor:
+      local: proveedor_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Pago:
+      local: pago_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    
+Categoria:
+  connection: doctrine
+  tableName: categoria
+  actAs:
+   Timestampable:
+   Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
+    padre:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+    orden:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mancheta:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion_breve:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    keywords:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+ 
+Ciudad:
+  connection: doctrine
+  tableName: ciudad
+  actAs:
+   Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    provincia_final_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    codigo:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Provincia: { local: provincia_id, foreign: id, class: Provincia }
+    Provincia2: { local: provincia_final_id, foreign: id, class: Provincia }
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Pago:
+  connection: doctrine
+  tableName: pago
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+
+Provincia:
+  connection: doctrine
+  tableName: provincia
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    codigo:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Ciudad:
+      local: id
+      foreign: provincia_id
+      type: many
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+Ubicacion:
+  connection: doctrine
+  tableName: ubicacion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ciudad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ciudad_final_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    direccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    google_map:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Provincia:
+      local: provincia_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Ciudad: { local: ciudad_id, foreign: id, class: Ciudad }
+    Ciudad2: { local: ciudad_final_id, foreign: id, class: Ciudad }
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+Rede:
+  connection: doctrine
+  tableName: rede
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    logo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+Campo:
+  connection: doctrine
+  tableName: campo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+CampoDescuento:
+  connection: doctrine
+  tableName: campo_descuento
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_descuento_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    campo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorDescuento:
+      local: proveedor_descuento_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Campo:
+      local: campo_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+      
+CategoriaFaq:
+  connection: doctrine
+  tableName: categoria_faq
+  actAs:
+   Timestampable:
+   Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    orden:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false    
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+DetalleFaq:
+  connection: doctrine
+  tableName: detalle_faq
+  actAs:
+   Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    categoria_faq_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    pregunta:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
+    respuesta:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false    
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    CategoriaFaq:
+      local: categoria_faq_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+      
+EmpresaSeccion:
+  connection: doctrine
+  tableName: empresa_seccion
+  actAs:
+   Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titulo:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+
+TipoVuelo:
+  connection: doctrine
+  tableName: tipo_vuelo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoMotivo:
+  connection: doctrine
+  tableName: tipo_motivo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoLona:
+  connection: doctrine
+  tableName: tipo_lona
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoRestriciones:
+  connection: doctrine
+  tableName: tipo_restriciones
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoRecomendaciones:
+  connection: doctrine
+  tableName: tipo_recomendaciones
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+Globo:
+  connection: doctrine
+  tableName: globo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    ubicacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    canastilla_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    canastilla_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    quemador_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    modelo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_serie:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    peso_limite:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    peso_max_vacio:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    peso_max_pasajeros:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    combustible:
+      type: float(18)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    tamano:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    cantidad_tanques:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    capacidad:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+    certificado:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mantenimiento_proximo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mantenimiento_ultimo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Marca:
+      local: marca_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Canastilla:
+      local: canastilla_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Quemador:
+      local: quemador_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Ubicacion:
+      local: ubicacion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+MantenimientoGlobo:
+  connection: doctrine
+  tableName: mantenimiento_globo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    globo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    realizado_por:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Globo:
+      local: globo_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+ProveedorVuelo:
+  connection: doctrine
+  tableName: proveedor_vuelo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    codigo:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    globo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_tarifa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_motivo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_lona_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    horario:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    condiciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fecha_limite:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fecha_activacion:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha_finalizacion:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    precio_oferta:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    TipoVuelo:
+      local: tipo_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    TipoMotivo:
+      local: tipo_motivo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    TipoTarifa:
+      local: tipo_tarifa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+VueloRestriciones:
+  connection: doctrine
+  tableName: vuelo_restriciones
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_restriciones_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorVuelo:
+      local: proveedor_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoRestriciones:
+      local: tipo_restriciones_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+      
+VueloRecomendaciones:
+  connection: doctrine
+  tableName: vuelo_recomendaciones
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_recomendaciones_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorVuelo:
+      local: proveedor_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoRecomendaciones:
+      local: tipo_recomendaciones_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+      
+VueloServicio:
+  connection: doctrine
+  tableName: vuelo_servicio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    proveedor_descuento_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cantidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1  
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorVuelo:
+      local: proveedor_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorDescuento:
+      local: proveedor_descuento_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VueloHospedaje:
+  connection: doctrine
+  tableName: vuelo_hospedaje
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    hospedaje_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    hospedaje_habitacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cantidad:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    cantidad_personas:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    check_in:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    check_out:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    precio:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1  
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorVuelo:
+      local: proveedor_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Hospedaje:
+      local: hospedaje_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    HospedajeHabitacion:
+      local: hospedaje_habitacion_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Cliente:
+  connection: doctrine
+  tableName: cliente
+  actAs:
+   Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titulo:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    tipo_cliente_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    pais_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    dni:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    apellido:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ocupacion:
+      type: string(50)
+      notnull: true
+      default: 1
+    fecha_nacimiento: date
+    sexo: integer(1)
+    edo_civil: string(50)
+    nacionalidad: string(50)
+    direcion: string()
+    direccion_fisica:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    telefono_principal:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    telefono_secundario:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    email:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    website:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    peso:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Pais:
+      local: pais_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    TipoCliente:
+      local: tipo_cliente_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+VueloCliente:
+  connection: doctrine
+  tableName: vuelo_ciente
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    proveedor_vuelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    cliente_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    ProveedorVuelo:
+      local: proveedor_vuelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Cliente:
+      local: cliente_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+Marca:
+  connection: doctrine
+  tableName: marca
+  actAs:
+   Timestampable:
+   Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion_breve:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    keywords:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+Quemador:
+  connection: doctrine
+  tableName: quemador
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    modelo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_serie:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observaciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    mantenimiento_proximo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mantenimiento_ultimo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Marca:
+      local: marca_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+MantenimientoQuemador:
+  connection: doctrine
+  tableName: mantenimiento_quemador
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    quemador_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    realizado_por:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Quemador:
+      local: quemador_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+TipoCanastilla:
+  connection: doctrine
+  tableName: tipo_canastilla
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+Canastilla:
+  connection: doctrine
+  tableName: canastilla
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    tipo_canastilla_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    modelo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_serie:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observaciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    mantenimiento_proximo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mantenimiento_ultimo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Marca:
+      local: marca_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoCanastilla:
+      local: tipo_canastilla_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+MantenimientoCanastilla:
+  connection: doctrine
+  tableName: mantenimiento_canastilla
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    canastilla_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    realizado_por:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Canastilla:
+      local: canastilla_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Tanque:
+  connection: doctrine
+  tableName: tanque
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    modelo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_serie:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    capacidad:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    observaciones:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    mantenimiento_proximo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    mantenimiento_ultimo:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Marca:
+      local: marca_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+MantenimientoTanque:
+  connection: doctrine
+  tableName: mantenimiento_tanque
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    tanque_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha:
+      type: date
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    realizado_por:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Tanque:
+      local: tanque_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+TipoHabitacion:
+  connection: doctrine
+  tableName: tipo_habitacion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+TipoCama:
+  connection: doctrine
+  tableName: tipo_cama
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    orden:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+      
+      
+      
+Hospedaje:
+  connection: doctrine
+  tableName: hospedaje
+  actAs:
+   Timestampable:
+   Sluggable: { fields: [nombre], uniqueBy: [nombre] }
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    ciudad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    rif:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    dni:
+      type: string(25)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nombre:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nickname:
+      type: string(150)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    direccion_fiscal:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    direccion_fisica:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    horario:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    telefono1:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    telefono2:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    email:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    website:
+      type: string(40)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_nombre:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_puesto:
+      type: string(30)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    contacto_telefono:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    observacion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    logo:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    video:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    redes_sociales:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    palabras_claves:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+    destacado:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    click:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Provincia:
+      local: provincia_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    Ciudad:
+      local: ciudad_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+      
+HospedajeHabitacion:
+  connection: doctrine
+  tableName: hospedaje_habitacion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    hospedaje_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_habitacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_cama:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+    cantidad_personas:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    foto:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Hospedaje:
+      local: hospedaje_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    TipoHabitacion:
+      local: tipo_habitacion_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+GaleriaHospedaje:
+  connection: doctrine
+  tableName: galeria_hospedaje
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    hospedaje_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Hospedaje:
+      local: hospedaje_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+HospedajeRede:
+  connection: doctrine
+  tableName: hospedaje_rede
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    hospedaje_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    rede_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    direccion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Hospedaje:
+      local: hospedaje_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Rede:
+      local: rede_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+HospedajePago:
+  connection: doctrine
+  tableName: hospedaje_pago
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    hospedaje_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    pago_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    valor:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Hospedaje:
+      local: hospedaje_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Pago:
+      local: pago_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Vehiculo:
+  connection: doctrine
+  tableName: vehiculo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    vehiculo_categoria_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_marca_modelo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_tipo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_tipo_transmision_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_tipo_reproductor_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    placa:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    anno:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    VehiculoCategoria:
+      local: vehiculo_categoria_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoTipoReproductor:
+      local: vehiculo_tipo_reproductor_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoMarca:
+      local: vehiculo_marca_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoMarcaModelo:
+      local: vehiculo_marca_modelo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoTipo:
+      local: vehiculo_tipo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoTipoTransmision:
+      local: vehiculo_tipo_transmision_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoHasPolitica:
+  connection: doctrine
+  tableName: vehiculo_has_politica
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    vehiculo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_politica_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Vehiculo:
+      local: vehiculo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoPolitica:
+      local: vehiculo_politica_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoHasSeguro:
+  connection: doctrine
+  tableName: vehiculo_has_seguro
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    vehiculo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_seguro_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Vehiculo:
+      local: vehiculo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoSeguro:
+      local: vehiculo_seguro_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+VehiculoHasAdicional:
+  connection: doctrine
+  tableName: vehiculo_has_adicional
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    vehiculo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    vehiculo_adicional_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Vehiculo:
+      local: vehiculo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    VehiculoAdicional:
+      local: vehiculo_adicional_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+VehiculoCategoria:
+  connection: doctrine
+  tableName: vehiculo_categoria
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoTipoReproductor:
+  connection: doctrine
+  tableName: vehiculo_tipo_reproductor
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+ 
+VehiculoMarca:
+  connection: doctrine
+  tableName: vehiculo_marca
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+  
+VehiculoMarcaModelo:
+  connection: doctrine
+  tableName: vehiculo_marca_modelo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    vehiculo_marca_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    cantidad_puerta:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+    capacidad_maleta:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    capacidad_persona:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    VehiculoMarca:
+      local: vehiculo_marca_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    
+VehiculoTipo:
+  connection: doctrine
+  tableName: vehiculo_tipo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+ 
+VehiculoTipoTransmision:
+  connection: doctrine
+  tableName: vehiculo_tipo_transmision
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+
+VehiculoPrecio:
+  connection: doctrine
+  tableName: vehiculo_precio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    vehiculo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    ciudad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    ubicacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    provincia_final_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    ciudad_final_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    ubicacion_final_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: true
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Vehiculo:
+      local: vehiculo_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    Provincia: { local: provincia_id, foreign: id, class: Provincia }
+    ProvinciaFinal: { local: provincia_final_id, foreign: id, class: Provincia }
+    Ciudad: { local: ciudad_id, foreign: id, class: Ciudad }
+    CiudadFinal: { local: ciudad_final_id, foreign: id, class: Ciudad }
+    Ubicacion: { local: ubicacion_id, foreign: id, class: Ubicacion }
+    UbicacionFinal: { local: ubicacion_final_id, foreign: id, class: Ubicacion }
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoAdicional:
+  connection: doctrine
+  tableName: vehiculo_adicional
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    icono:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoPolitica:
+  connection: doctrine
+  tableName: vehiculo_politica
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+VehiculoSeguro:
+  connection: doctrine
+  tableName: vehiculo_seguro
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Seguro:
+  connection: doctrine
+  tableName: seguro
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    seguro_tipo_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    seguro_plan_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    dia:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    SeguroTipo:
+      local: seguro_tipo_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    SeguroPlan:
+      local: seguro_plan_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+SeguroTipo:
+  connection: doctrine
+  tableName: seguro_tipo
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+SeguroPlan:
+  connection: doctrine
+  tableName: seguro_plan
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+SeguroBeneficio:
+  connection: doctrine
+  tableName: seguro_beneficio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+SeguroHasBeneficio:
+  connection: doctrine
+  tableName: seguro_has_beneficio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    seguro_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    seguro_beneficio_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Seguro:
+      local: seguro_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    SeguroBeneficio:
+      local: seguro_beneficio_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+SeguroPrecio:
+  connection: doctrine
+  tableName: seguro_precio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    seguro_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Seguro:
+      local: seguro_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+Excursion:
+  connection: doctrine
+  tableName: excursion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ubicacion:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    fecha:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    tipo_publico:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    capacidad_persona:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionAdicional:
+  connection: doctrine
+  tableName: excursion_adicional
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    icono:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionPolitica:
+  connection: doctrine
+  tableName: excursion_politica
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionLugarInteres:
+  connection: doctrine
+  tableName: excursion_lugar_interes
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false  
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionRequisito:
+  connection: doctrine
+  tableName: excursion_requisito
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false 
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionRequisito:
+  connection: doctrine
+  tableName: excursion_requisito
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false 
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionInclusion:
+  connection: doctrine
+  tableName: excursion_inclusion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    nombre:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    status:
+      type: integer(1)
+      fixed: false
+      unsigned: false
+      primary: false
+      default: 1
+      autoincrement: false 
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionHasAdicional:
+  connection: doctrine
+  tableName: excursion_has_adicional
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    excursion_adicional_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    ExcursionAdicional:
+      local: excursion_adicional_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionHasPolitica:
+  connection: doctrine
+  tableName: excursion_has_politica
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    excursion_politica_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    ExcursionPolitica:
+      local: excursion_politica_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionHasLugarInteres:
+  connection: doctrine
+  tableName: excursion_has_lugar_interes
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    excursion_lugar_interes_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    ExcursionLugarInteres:
+      local: excursion_lugar_interes_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionHasInclusion:
+  connection: doctrine
+  tableName: excursion_has_inclusion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    excursion_inclusion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    ExcursionInclusion:
+      local: excursion_inclusion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionHasRequisito:
+  connection: doctrine
+  tableName: excursion_has_requisito
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    excursion_requisito_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    valor:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    ExcursionRequisito:
+      local: excursion_requisito_id
+      foreign: id
+      type: one
+      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+      
+ExcursionPrecio:
+  connection: doctrine
+  tableName: excursion_precio
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      default: 1
+      autoincrement: false
+    excursion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    precio:
+      type: float(18,2)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_adulto:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_ninno:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    numero_tercera_edad:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Excursion:
+      local: excursion_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL

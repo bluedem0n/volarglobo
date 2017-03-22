@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=agenciard
+      username: root
+      password: root
+      
+      
+#all:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=usmjesus.ipagemysql.com;dbname=volarenglobo
+#      username: volarenglobo
+#      password: v01ar3ng10b0_
+      

@@ -1,0 +1,56 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/04-Settings
+
+prod:
+  .settings:
+    web_debug:              true
+    cache:                  false
+    no_script_name:         true
+    etag:                   false
+    
+
+dev:
+  .settings:
+    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug:              true
+    cache:                  false
+    no_script_name:         true
+    etag:                   false
+
+test:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    cache:                  false
+    web_debug:              false
+    no_script_name:         false
+    etag:                   false
+
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            631207e679c95b0862d270290b89bc7d3a19add4
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Enable the database manager
+    use_database:           true
+
+    enabled_modules:        [default, sfGuardAuth]
+    login_module:           sfGuardAuth
+    login_action:           signin
+
+    secure_module:          sfGuardAuth
+    secure_action:          secure
+    cache:                  true
+    path_info_key:          REDIRECT_URL
+    
+    #page not found
+    error_404_module:       errors     # module "errors"
+    error_404_action:       error404   # action "executeError404"
+    #403 credential required
+    secure_module:          errors     # module "errors"
+    secure_action:          error403   # action "executeError403"
+    
+    
