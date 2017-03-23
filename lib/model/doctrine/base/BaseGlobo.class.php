@@ -38,6 +38,7 @@ Doctrine_Manager::getInstance()->bindComponent('Globo', 'doctrine');
  * @property Canastilla $Canastilla
  * @property Quemador $Quemador
  * @property Ubicacion $Ubicacion
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $MantenimientoGlobo
  * 
  * @method integer             getId()                    Returns the current record's "id" value
@@ -71,6 +72,7 @@ Doctrine_Manager::getInstance()->bindComponent('Globo', 'doctrine');
  * @method Canastilla          getCanastilla()            Returns the current record's "Canastilla" value
  * @method Quemador            getQuemador()              Returns the current record's "Quemador" value
  * @method Ubicacion           getUbicacion()             Returns the current record's "Ubicacion" value
+ * @method sfGuardUser         getSfGuardUser()           Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getMantenimientoGlobo()    Returns the current record's "MantenimientoGlobo" collection
  * @method Globo               setId()                    Sets the current record's "id" value
  * @method Globo               setEmpresaId()             Sets the current record's "empresa_id" value
@@ -103,6 +105,7 @@ Doctrine_Manager::getInstance()->bindComponent('Globo', 'doctrine');
  * @method Globo               setCanastilla()            Sets the current record's "Canastilla" value
  * @method Globo               setQuemador()              Sets the current record's "Quemador" value
  * @method Globo               setUbicacion()             Sets the current record's "Ubicacion" value
+ * @method Globo               setSfGuardUser()           Sets the current record's "sfGuardUser" value
  * @method Globo               setMantenimientoGlobo()    Sets the current record's "MantenimientoGlobo" collection
  * 
  * @package    hub-usmjesus
@@ -362,6 +365,10 @@ abstract class BaseGlobo extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('MantenimientoGlobo', array(
              'local' => 'id',

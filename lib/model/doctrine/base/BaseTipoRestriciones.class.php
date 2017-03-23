@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRestriciones', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $VueloRestriciones
  * 
  * @method integer             getId()                Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRestriciones', 'doctrine');
  * @method integer             getUserId()            Returns the current record's "user_id" value
  * @method string              getUserName()          Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()           Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()       Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getVueloRestriciones() Returns the current record's "VueloRestriciones" collection
  * @method TipoRestriciones    setId()                Sets the current record's "id" value
  * @method TipoRestriciones    setEmpresaId()         Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRestriciones', 'doctrine');
  * @method TipoRestriciones    setUserId()            Sets the current record's "user_id" value
  * @method TipoRestriciones    setUserName()          Sets the current record's "user_name" value
  * @method TipoRestriciones    setEmpresa()           Sets the current record's "Empresa" value
+ * @method TipoRestriciones    setSfGuardUser()       Sets the current record's "sfGuardUser" value
  * @method TipoRestriciones    setVueloRestriciones() Sets the current record's "VueloRestriciones" collection
  * 
  * @package    hub-usmjesus
@@ -141,6 +144,10 @@ abstract class BaseTipoRestriciones extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('VueloRestriciones', array(
              'local' => 'id',

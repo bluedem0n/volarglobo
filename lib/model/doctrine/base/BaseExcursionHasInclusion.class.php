@@ -10,36 +10,36 @@ Doctrine_Manager::getInstance()->bindComponent('ExcursionHasInclusion', 'doctrin
  * @property integer $id
  * @property integer $empresa_id
  * @property integer $excursion_id
- * @property integer $excursion_inclusion_id
+ * @property integer $excursion_incluible_id
  * @property integer $valor
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
  * @property Excursion $Excursion
- * @property ExcursionInclusion $ExcursionInclusion
+ * @property ExcursionIncluible $ExcursionIncluible
  * @property sfGuardUser $sfGuardUser
  * 
  * @method integer               getId()                     Returns the current record's "id" value
  * @method integer               getEmpresaId()              Returns the current record's "empresa_id" value
  * @method integer               getExcursionId()            Returns the current record's "excursion_id" value
- * @method integer               getExcursionInclusionId()   Returns the current record's "excursion_inclusion_id" value
+ * @method integer               getExcursionIncluibleId()   Returns the current record's "excursion_incluible_id" value
  * @method integer               getValor()                  Returns the current record's "valor" value
  * @method integer               getUserId()                 Returns the current record's "user_id" value
  * @method string                getUserName()               Returns the current record's "user_name" value
  * @method Empresa               getEmpresa()                Returns the current record's "Empresa" value
  * @method Excursion             getExcursion()              Returns the current record's "Excursion" value
- * @method ExcursionInclusion    getExcursionInclusion()     Returns the current record's "ExcursionInclusion" value
+ * @method ExcursionIncluible    getExcursionIncluible()     Returns the current record's "ExcursionIncluible" value
  * @method sfGuardUser           getSfGuardUser()            Returns the current record's "sfGuardUser" value
  * @method ExcursionHasInclusion setId()                     Sets the current record's "id" value
  * @method ExcursionHasInclusion setEmpresaId()              Sets the current record's "empresa_id" value
  * @method ExcursionHasInclusion setExcursionId()            Sets the current record's "excursion_id" value
- * @method ExcursionHasInclusion setExcursionInclusionId()   Sets the current record's "excursion_inclusion_id" value
+ * @method ExcursionHasInclusion setExcursionIncluibleId()   Sets the current record's "excursion_incluible_id" value
  * @method ExcursionHasInclusion setValor()                  Sets the current record's "valor" value
  * @method ExcursionHasInclusion setUserId()                 Sets the current record's "user_id" value
  * @method ExcursionHasInclusion setUserName()               Sets the current record's "user_name" value
  * @method ExcursionHasInclusion setEmpresa()                Sets the current record's "Empresa" value
  * @method ExcursionHasInclusion setExcursion()              Sets the current record's "Excursion" value
- * @method ExcursionHasInclusion setExcursionInclusion()     Sets the current record's "ExcursionInclusion" value
+ * @method ExcursionHasInclusion setExcursionIncluible()     Sets the current record's "ExcursionIncluible" value
  * @method ExcursionHasInclusion setSfGuardUser()            Sets the current record's "sfGuardUser" value
  * 
  * @package    hub-usmjesus
@@ -76,7 +76,7 @@ abstract class BaseExcursionHasInclusion extends sfDoctrineRecord
              'notnull' => true,
              'autoincrement' => false,
              ));
-        $this->hasColumn('excursion_inclusion_id', 'integer', null, array(
+        $this->hasColumn('excursion_incluible_id', 'integer', null, array(
              'type' => 'integer',
              'fixed' => 0,
              'unsigned' => false,
@@ -125,8 +125,8 @@ abstract class BaseExcursionHasInclusion extends sfDoctrineRecord
              'local' => 'excursion_id',
              'foreign' => 'id'));
 
-        $this->hasOne('ExcursionInclusion', array(
-             'local' => 'excursion_inclusion_id',
+        $this->hasOne('ExcursionIncluible', array(
+             'local' => 'excursion_incluible_id',
              'foreign' => 'id'));
 
         $this->hasOne('sfGuardUser', array(

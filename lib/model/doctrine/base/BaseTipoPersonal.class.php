@@ -71,7 +71,7 @@ abstract class BaseTipoPersonal extends sfDoctrineRecord
         $this->hasColumn('nombre', 'string', 100, array(
              'type' => 'string',
              'fixed' => 0,
-             'unsigned' => false,
+             'unsigned' => 'falsec',
              'primary' => false,
              'notnull' => true,
              'autoincrement' => false,

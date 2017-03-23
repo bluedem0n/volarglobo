@@ -16,25 +16,28 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCama', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * 
- * @method integer  getId()          Returns the current record's "id" value
- * @method integer  getEmpresaId()   Returns the current record's "empresa_id" value
- * @method string   getNombre()      Returns the current record's "nombre" value
- * @method string   getDescripcion() Returns the current record's "descripcion" value
- * @method string   getOrden()       Returns the current record's "orden" value
- * @method integer  getStatus()      Returns the current record's "status" value
- * @method integer  getUserId()      Returns the current record's "user_id" value
- * @method string   getUserName()    Returns the current record's "user_name" value
- * @method Empresa  getEmpresa()     Returns the current record's "Empresa" value
- * @method TipoCama setId()          Sets the current record's "id" value
- * @method TipoCama setEmpresaId()   Sets the current record's "empresa_id" value
- * @method TipoCama setNombre()      Sets the current record's "nombre" value
- * @method TipoCama setDescripcion() Sets the current record's "descripcion" value
- * @method TipoCama setOrden()       Sets the current record's "orden" value
- * @method TipoCama setStatus()      Sets the current record's "status" value
- * @method TipoCama setUserId()      Sets the current record's "user_id" value
- * @method TipoCama setUserName()    Sets the current record's "user_name" value
- * @method TipoCama setEmpresa()     Sets the current record's "Empresa" value
+ * @method integer     getId()          Returns the current record's "id" value
+ * @method integer     getEmpresaId()   Returns the current record's "empresa_id" value
+ * @method string      getNombre()      Returns the current record's "nombre" value
+ * @method string      getDescripcion() Returns the current record's "descripcion" value
+ * @method string      getOrden()       Returns the current record's "orden" value
+ * @method integer     getStatus()      Returns the current record's "status" value
+ * @method integer     getUserId()      Returns the current record's "user_id" value
+ * @method string      getUserName()    Returns the current record's "user_name" value
+ * @method Empresa     getEmpresa()     Returns the current record's "Empresa" value
+ * @method sfGuardUser getSfGuardUser() Returns the current record's "sfGuardUser" value
+ * @method TipoCama    setId()          Sets the current record's "id" value
+ * @method TipoCama    setEmpresaId()   Sets the current record's "empresa_id" value
+ * @method TipoCama    setNombre()      Sets the current record's "nombre" value
+ * @method TipoCama    setDescripcion() Sets the current record's "descripcion" value
+ * @method TipoCama    setOrden()       Sets the current record's "orden" value
+ * @method TipoCama    setStatus()      Sets the current record's "status" value
+ * @method TipoCama    setUserId()      Sets the current record's "user_id" value
+ * @method TipoCama    setUserName()    Sets the current record's "user_name" value
+ * @method TipoCama    setEmpresa()     Sets the current record's "Empresa" value
+ * @method TipoCama    setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    hub-usmjesus
  * @subpackage model
@@ -126,6 +129,10 @@ abstract class BaseTipoCama extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

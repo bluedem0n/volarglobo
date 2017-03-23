@@ -5,7 +5,7 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=agenciard
+      dsn:      mysql:host=localhost;dbname=volarglobo
       username: root
       password: root
       

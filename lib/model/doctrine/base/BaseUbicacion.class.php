@@ -9,7 +9,6 @@ Doctrine_Manager::getInstance()->bindComponent('Ubicacion', 'doctrine');
  * 
  * @property integer $id
  * @property integer $empresa_id
- * @property integer $provincia_id
  * @property integer $ciudad_id
  * @property integer $ciudad_final_id
  * @property string $nombre
@@ -19,49 +18,47 @@ Doctrine_Manager::getInstance()->bindComponent('Ubicacion', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
- * @property Provincia $Provincia
  * @property Ciudad $Ciudad
  * @property Ciudad $Ciudad2
  * @property sfGuardUser $sfGuardUser
+ * @property Doctrine_Collection $GaleriaUbicacion
  * @property Doctrine_Collection $Globo
  * @property Doctrine_Collection $VehiculoPrecio
  * 
- * @method integer             getId()              Returns the current record's "id" value
- * @method integer             getEmpresaId()       Returns the current record's "empresa_id" value
- * @method integer             getProvinciaId()     Returns the current record's "provincia_id" value
- * @method integer             getCiudadId()        Returns the current record's "ciudad_id" value
- * @method integer             getCiudadFinalId()   Returns the current record's "ciudad_final_id" value
- * @method string              getNombre()          Returns the current record's "nombre" value
- * @method string              getDireccion()       Returns the current record's "direccion" value
- * @method string              getGoogleMap()       Returns the current record's "google_map" value
- * @method string              getObservacion()     Returns the current record's "observacion" value
- * @method integer             getUserId()          Returns the current record's "user_id" value
- * @method string              getUserName()        Returns the current record's "user_name" value
- * @method Empresa             getEmpresa()         Returns the current record's "Empresa" value
- * @method Provincia           getProvincia()       Returns the current record's "Provincia" value
- * @method Ciudad              getCiudad()          Returns the current record's "Ciudad" value
- * @method Ciudad              getCiudad2()         Returns the current record's "Ciudad2" value
- * @method sfGuardUser         getSfGuardUser()     Returns the current record's "sfGuardUser" value
- * @method Doctrine_Collection getGlobo()           Returns the current record's "Globo" collection
- * @method Doctrine_Collection getVehiculoPrecio()  Returns the current record's "VehiculoPrecio" collection
- * @method Ubicacion           setId()              Sets the current record's "id" value
- * @method Ubicacion           setEmpresaId()       Sets the current record's "empresa_id" value
- * @method Ubicacion           setProvinciaId()     Sets the current record's "provincia_id" value
- * @method Ubicacion           setCiudadId()        Sets the current record's "ciudad_id" value
- * @method Ubicacion           setCiudadFinalId()   Sets the current record's "ciudad_final_id" value
- * @method Ubicacion           setNombre()          Sets the current record's "nombre" value
- * @method Ubicacion           setDireccion()       Sets the current record's "direccion" value
- * @method Ubicacion           setGoogleMap()       Sets the current record's "google_map" value
- * @method Ubicacion           setObservacion()     Sets the current record's "observacion" value
- * @method Ubicacion           setUserId()          Sets the current record's "user_id" value
- * @method Ubicacion           setUserName()        Sets the current record's "user_name" value
- * @method Ubicacion           setEmpresa()         Sets the current record's "Empresa" value
- * @method Ubicacion           setProvincia()       Sets the current record's "Provincia" value
- * @method Ubicacion           setCiudad()          Sets the current record's "Ciudad" value
- * @method Ubicacion           setCiudad2()         Sets the current record's "Ciudad2" value
- * @method Ubicacion           setSfGuardUser()     Sets the current record's "sfGuardUser" value
- * @method Ubicacion           setGlobo()           Sets the current record's "Globo" collection
- * @method Ubicacion           setVehiculoPrecio()  Sets the current record's "VehiculoPrecio" collection
+ * @method integer             getId()               Returns the current record's "id" value
+ * @method integer             getEmpresaId()        Returns the current record's "empresa_id" value
+ * @method integer             getCiudadId()         Returns the current record's "ciudad_id" value
+ * @method integer             getCiudadFinalId()    Returns the current record's "ciudad_final_id" value
+ * @method string              getNombre()           Returns the current record's "nombre" value
+ * @method string              getDireccion()        Returns the current record's "direccion" value
+ * @method string              getGoogleMap()        Returns the current record's "google_map" value
+ * @method string              getObservacion()      Returns the current record's "observacion" value
+ * @method integer             getUserId()           Returns the current record's "user_id" value
+ * @method string              getUserName()         Returns the current record's "user_name" value
+ * @method Empresa             getEmpresa()          Returns the current record's "Empresa" value
+ * @method Ciudad              getCiudad()           Returns the current record's "Ciudad" value
+ * @method Ciudad              getCiudad2()          Returns the current record's "Ciudad2" value
+ * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
+ * @method Doctrine_Collection getGaleriaUbicacion() Returns the current record's "GaleriaUbicacion" collection
+ * @method Doctrine_Collection getGlobo()            Returns the current record's "Globo" collection
+ * @method Doctrine_Collection getVehiculoPrecio()   Returns the current record's "VehiculoPrecio" collection
+ * @method Ubicacion           setId()               Sets the current record's "id" value
+ * @method Ubicacion           setEmpresaId()        Sets the current record's "empresa_id" value
+ * @method Ubicacion           setCiudadId()         Sets the current record's "ciudad_id" value
+ * @method Ubicacion           setCiudadFinalId()    Sets the current record's "ciudad_final_id" value
+ * @method Ubicacion           setNombre()           Sets the current record's "nombre" value
+ * @method Ubicacion           setDireccion()        Sets the current record's "direccion" value
+ * @method Ubicacion           setGoogleMap()        Sets the current record's "google_map" value
+ * @method Ubicacion           setObservacion()      Sets the current record's "observacion" value
+ * @method Ubicacion           setUserId()           Sets the current record's "user_id" value
+ * @method Ubicacion           setUserName()         Sets the current record's "user_name" value
+ * @method Ubicacion           setEmpresa()          Sets the current record's "Empresa" value
+ * @method Ubicacion           setCiudad()           Sets the current record's "Ciudad" value
+ * @method Ubicacion           setCiudad2()          Sets the current record's "Ciudad2" value
+ * @method Ubicacion           setSfGuardUser()      Sets the current record's "sfGuardUser" value
+ * @method Ubicacion           setGaleriaUbicacion() Sets the current record's "GaleriaUbicacion" collection
+ * @method Ubicacion           setGlobo()            Sets the current record's "Globo" collection
+ * @method Ubicacion           setVehiculoPrecio()   Sets the current record's "VehiculoPrecio" collection
  * 
  * @package    hub-usmjesus
  * @subpackage model
@@ -88,14 +85,6 @@ abstract class BaseUbicacion extends sfDoctrineRecord
              'notnull' => true,
              'autoincrement' => false,
              'default' => 1,
-             ));
-        $this->hasColumn('provincia_id', 'integer', null, array(
-             'type' => 'integer',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'notnull' => true,
-             'autoincrement' => false,
              ));
         $this->hasColumn('ciudad_id', 'integer', null, array(
              'type' => 'integer',
@@ -178,23 +167,25 @@ abstract class BaseUbicacion extends sfDoctrineRecord
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
 
-        $this->hasOne('Provincia', array(
-             'local' => 'provincia_id',
+        $this->hasOne('Ciudad', array(
+             'local' => 'ciudad_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
 
-        $this->hasOne('Ciudad', array(
-             'local' => 'ciudad_id',
-             'foreign' => 'id'));
-
         $this->hasOne('Ciudad as Ciudad2', array(
              'local' => 'ciudad_final_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
 
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id'));
+
+        $this->hasMany('GaleriaUbicacion', array(
+             'local' => 'id',
+             'foreign' => 'ubicacion_id'));
 
         $this->hasMany('Globo', array(
              'local' => 'id',

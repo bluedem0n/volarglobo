@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCliente', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Cliente
  * 
  * @method integer             getId()          Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCliente', 'doctrine');
  * @method integer             getUserId()      Returns the current record's "user_id" value
  * @method string              getUserName()    Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()     Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser() Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getCliente()     Returns the current record's "Cliente" collection
  * @method TipoCliente         setId()          Sets the current record's "id" value
  * @method TipoCliente         setEmpresaId()   Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCliente', 'doctrine');
  * @method TipoCliente         setUserId()      Sets the current record's "user_id" value
  * @method TipoCliente         setUserName()    Sets the current record's "user_name" value
  * @method TipoCliente         setEmpresa()     Sets the current record's "Empresa" value
+ * @method TipoCliente         setSfGuardUser() Sets the current record's "sfGuardUser" value
  * @method TipoCliente         setCliente()     Sets the current record's "Cliente" collection
  * 
  * @package    hub-usmjesus
@@ -141,6 +144,10 @@ abstract class BaseTipoCliente extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('Cliente', array(
              'local' => 'id',

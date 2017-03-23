@@ -14,10 +14,12 @@ abstract class BaseExcursionFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'empresa_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => true)),
+      'provincia_id'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'ciudad_id'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'ubicacion_id'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'nombre'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'imagen'            => new sfWidgetFormFilterInput(),
       'descripcion'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'ubicacion'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'fecha'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'tipo_publico'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'capacidad_persona' => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -29,10 +31,12 @@ abstract class BaseExcursionFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'empresa_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Empresa'), 'column' => 'id')),
+      'provincia_id'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'ciudad_id'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'ubicacion_id'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'nombre'            => new sfValidatorPass(array('required' => false)),
       'imagen'            => new sfValidatorPass(array('required' => false)),
       'descripcion'       => new sfValidatorPass(array('required' => false)),
-      'ubicacion'         => new sfValidatorPass(array('required' => false)),
       'fecha'             => new sfValidatorPass(array('required' => false)),
       'tipo_publico'      => new sfValidatorPass(array('required' => false)),
       'capacidad_persona' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -61,10 +65,12 @@ abstract class BaseExcursionFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'                => 'Number',
       'empresa_id'        => 'ForeignKey',
+      'provincia_id'      => 'Number',
+      'ciudad_id'         => 'Number',
+      'ubicacion_id'      => 'Number',
       'nombre'            => 'Text',
       'imagen'            => 'Text',
       'descripcion'       => 'Text',
-      'ubicacion'         => 'Text',
       'fecha'             => 'Text',
       'tipo_publico'      => 'Text',
       'capacidad_persona' => 'Number',

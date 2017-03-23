@@ -19,6 +19,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifa', 'doctrine');
  * @property string $user_name
  * @property Empresa $Empresa
  * @property TipoVuelo $TipoVuelo
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $TipoTarifaPrecio
  * @property Doctrine_Collection $ProveedorVuelo
  * 
@@ -34,6 +35,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifa', 'doctrine');
  * @method string              getUserName()         Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()          Returns the current record's "Empresa" value
  * @method TipoVuelo           getTipoVuelo()        Returns the current record's "TipoVuelo" value
+ * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getTipoTarifaPrecio() Returns the current record's "TipoTarifaPrecio" collection
  * @method Doctrine_Collection getProveedorVuelo()   Returns the current record's "ProveedorVuelo" collection
  * @method TipoTarifa          setId()               Sets the current record's "id" value
@@ -48,6 +50,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifa', 'doctrine');
  * @method TipoTarifa          setUserName()         Sets the current record's "user_name" value
  * @method TipoTarifa          setEmpresa()          Sets the current record's "Empresa" value
  * @method TipoTarifa          setTipoVuelo()        Sets the current record's "TipoVuelo" value
+ * @method TipoTarifa          setSfGuardUser()      Sets the current record's "sfGuardUser" value
  * @method TipoTarifa          setTipoTarifaPrecio() Sets the current record's "TipoTarifaPrecio" collection
  * @method TipoTarifa          setProveedorVuelo()   Sets the current record's "ProveedorVuelo" collection
  * 
@@ -162,6 +165,10 @@ abstract class BaseTipoTarifa extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('TipoTarifaPrecio', array(
              'local' => 'id',

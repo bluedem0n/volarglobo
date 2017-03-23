@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifaPrecio', 'doctrine');
  * @property Empresa $Empresa
  * @property TipoTarifa $TipoTarifa
  * @property RangoEdad $RangoEdad
+ * @property sfGuardUser $sfGuardUser
  * 
  * @method integer          getId()             Returns the current record's "id" value
  * @method integer          getEmpresaId()      Returns the current record's "empresa_id" value
@@ -28,6 +29,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifaPrecio', 'doctrine');
  * @method Empresa          getEmpresa()        Returns the current record's "Empresa" value
  * @method TipoTarifa       getTipoTarifa()     Returns the current record's "TipoTarifa" value
  * @method RangoEdad        getRangoEdad()      Returns the current record's "RangoEdad" value
+ * @method sfGuardUser      getSfGuardUser()    Returns the current record's "sfGuardUser" value
  * @method TipoTarifaPrecio setId()             Sets the current record's "id" value
  * @method TipoTarifaPrecio setEmpresaId()      Sets the current record's "empresa_id" value
  * @method TipoTarifaPrecio setTipoTarifaId()   Sets the current record's "tipo_tarifa_id" value
@@ -38,6 +40,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoTarifaPrecio', 'doctrine');
  * @method TipoTarifaPrecio setEmpresa()        Sets the current record's "Empresa" value
  * @method TipoTarifaPrecio setTipoTarifa()     Sets the current record's "TipoTarifa" value
  * @method TipoTarifaPrecio setRangoEdad()      Sets the current record's "RangoEdad" value
+ * @method TipoTarifaPrecio setSfGuardUser()    Sets the current record's "sfGuardUser" value
  * 
  * @package    hub-usmjesus
  * @subpackage model
@@ -131,6 +134,10 @@ abstract class BaseTipoTarifaPrecio extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

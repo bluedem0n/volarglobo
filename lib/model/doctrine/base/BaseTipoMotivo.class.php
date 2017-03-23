@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoMotivo', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $ProveedorVuelo
  * 
  * @method integer             getId()             Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoMotivo', 'doctrine');
  * @method integer             getUserId()         Returns the current record's "user_id" value
  * @method string              getUserName()       Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()        Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()    Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getProveedorVuelo() Returns the current record's "ProveedorVuelo" collection
  * @method TipoMotivo          setId()             Sets the current record's "id" value
  * @method TipoMotivo          setEmpresaId()      Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoMotivo', 'doctrine');
  * @method TipoMotivo          setUserId()         Sets the current record's "user_id" value
  * @method TipoMotivo          setUserName()       Sets the current record's "user_name" value
  * @method TipoMotivo          setEmpresa()        Sets the current record's "Empresa" value
+ * @method TipoMotivo          setSfGuardUser()    Sets the current record's "sfGuardUser" value
  * @method TipoMotivo          setProveedorVuelo() Sets the current record's "ProveedorVuelo" collection
  * 
  * @package    hub-usmjesus
@@ -141,6 +144,10 @@ abstract class BaseTipoMotivo extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('ProveedorVuelo', array(
              'local' => 'id',

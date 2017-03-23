@@ -294,6 +294,12 @@ Pais:
       autoincrement: false
       notnull: false
   relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
     sfGuardUser:
       local: user_id
       foreign: id
@@ -325,7 +331,7 @@ TipoPersonal:
     nombre:
       type: string(100)
       fixed: false
-      unsigned: false
+      unsigned: falsec
       primary: false
       notnull: true
       autoincrement: false
@@ -377,9 +383,9 @@ TipoPersonal:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+
       
 
 RangoEdad:
@@ -457,9 +463,14 @@ RangoEdad:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
     
 
 TipoTarifa:
@@ -544,7 +555,6 @@ TipoTarifa:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     TipoVuelo:
@@ -554,6 +564,12 @@ TipoTarifa:
       foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoTarifaPrecio:
   connection: doctrine
@@ -616,7 +632,6 @@ TipoTarifaPrecio:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     TipoTarifa:
@@ -633,6 +648,12 @@ TipoTarifaPrecio:
       foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoCliente:
   connection: doctrine
@@ -709,9 +730,14 @@ TipoCliente:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 Proveedor:
   connection: doctrine
@@ -937,7 +963,6 @@ Proveedor:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     Provincia:
@@ -1704,7 +1729,6 @@ Categoria:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -1792,8 +1816,14 @@ Ciudad:
       autoincrement: false
       notnull: false
   relations:
-    Provincia: { local: provincia_id, foreign: id, class: Provincia }
-    Provincia2: { local: provincia_final_id, foreign: id, class: Provincia }
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    Provincia: { local: provincia_id, foreign: id, class: Provincia, onDelete: CASCADE, onUpdate: CASCADE }
+    Provincia2: { local: provincia_final_id, foreign: id, class: Provincia, onDelete: CASCADE, onUpdate: CASCADE }
     sfGuardUser:
       local: user_id
       foreign: id
@@ -1871,6 +1901,20 @@ Pago:
       primary: false
       autoincrement: false
       notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
+ 
 
 Provincia:
   connection: doctrine
@@ -1943,10 +1987,12 @@ Provincia:
       autoincrement: false
       notnull: false
   relations:
-    Ciudad:
-      local: id
-      foreign: provincia_id
-      type: many
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
     sfGuardUser:
       local: user_id
       foreign: id
@@ -1975,13 +2021,6 @@ Ubicacion:
       notnull: true
       autoincrement: false
       default: 1
-    provincia_id:
-      type: integer
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
     ciudad_id:
       type: integer
       fixed: false
@@ -2044,18 +2083,86 @@ Ubicacion:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
-    Provincia:
-      local: provincia_id
+    Ciudad: { local: ciudad_id, foreign: id, class: Ciudad, onDelete: CASCADE, onUpdate: CASCADE }
+    Ciudad2: { local: ciudad_final_id, foreign: id, class: Ciudad, onDelete: CASCADE, onUpdate: CASCADE }
+    sfGuardUser:
+      local: user_id
       foreign: id
       type: one
-      foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+      
+GaleriaUbicacion:
+  connection: doctrine
+  tableName: galeria_ubicacion
+  actAs:
+    Timestampable:
+  columns:
+    id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    empresa_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+      default: 1
+    ubicacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    imagen:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    descripcion:
+      type: string()
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    user_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+      default: 1
+    user_name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      autoincrement: false
+      notnull: false
+  relations:
+    Empresa:
+      local: empresa_id
+      foreign: id
+      type: one
       onDelete: CASCADE
       onUpdate: CASCADE
-    Ciudad: { local: ciudad_id, foreign: id, class: Ciudad }
-    Ciudad2: { local: ciudad_final_id, foreign: id, class: Ciudad }
+    Ubicacion:
+      local: ubicacion_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      onUpdate: CASCADE
     sfGuardUser:
       local: user_id
       foreign: id
@@ -2123,7 +2230,6 @@ Rede:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -2186,7 +2292,6 @@ Campo:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -2270,6 +2375,7 @@ CampoDescuento:
       local: campo_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: NULL
       onUpdate: NULL
     sfGuardUser:
@@ -2343,7 +2449,6 @@ CategoriaFaq:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -2414,7 +2519,6 @@ DetalleFaq:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     CategoriaFaq:
@@ -2493,7 +2597,6 @@ EmpresaSeccion:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -2579,9 +2682,14 @@ TipoVuelo:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoMotivo:
   connection: doctrine
@@ -2658,9 +2766,14 @@ TipoMotivo:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoLona:
   connection: doctrine
@@ -2737,9 +2850,14 @@ TipoLona:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoRestriciones:
   connection: doctrine
@@ -2816,9 +2934,14 @@ TipoRestriciones:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoRecomendaciones:
   connection: doctrine
@@ -2895,9 +3018,14 @@ TipoRecomendaciones:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 Globo:
   connection: doctrine
@@ -3089,7 +3217,6 @@ Globo:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     Marca:
@@ -3120,6 +3247,12 @@ Globo:
       foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 MantenimientoGlobo:
   connection: doctrine
@@ -3351,16 +3484,8 @@ ProveedorVuelo:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
-    sfGuardUser:
-      local: user_id
-      foreign: id
-      type: one
-      foreignType: many
-      onDelete: NULL
-      onUpdate: NULL
     TipoVuelo:
       local: tipo_vuelo_id
       foreign: id
@@ -3380,6 +3505,12 @@ ProveedorVuelo:
       foreign: id
       type: one
       foreignType: many
+      onDelete: NULL
+      onUpdate: NULL
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
       onDelete: NULL
       onUpdate: NULL
       
@@ -3466,7 +3597,6 @@ VueloRestriciones:
       local: user_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: NULL
       onUpdate: NULL
       
@@ -3552,7 +3682,6 @@ VueloRecomendaciones:
       local: user_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: NULL
       onUpdate: NULL
       
@@ -3760,12 +3889,14 @@ VueloHospedaje:
       local: hospedaje_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: NULL
       onUpdate: NULL
     HospedajeHabitacion:
       local: hospedaje_habitacion_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: NULL
       onUpdate: NULL
     sfGuardUser:
@@ -3921,7 +4052,6 @@ Cliente:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     Pais:
@@ -4099,7 +4229,6 @@ Marca:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -4281,6 +4410,7 @@ MantenimientoQuemador:
       local: quemador_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     sfGuardUser:
@@ -4366,9 +4496,14 @@ TipoCanastilla:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 Canastilla:
   connection: doctrine
@@ -4818,9 +4953,14 @@ TipoHabitacion:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
 TipoCama:
   connection: doctrine
@@ -4890,9 +5030,14 @@ TipoCama:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      onDelete: NULL
+      onUpdate: NULL
       
       
       
@@ -5113,7 +5258,6 @@ Hospedaje:
       local: empresa_id
       foreign: id
       type: one
-      foreignType: many
       onDelete: CASCADE
       onUpdate: CASCADE
     Provincia:
@@ -7132,6 +7276,7 @@ SeguroPrecio:
       local: seguro_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: NULL
       onUpdate: NULL
     sfGuardUser:
@@ -7161,6 +7306,27 @@ Excursion:
       notnull: true
       default: 1
       autoincrement: false
+    provincia_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ciudad_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    ubicacion_id:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
     nombre:
       type: string(100)
       fixed: false
@@ -7177,13 +7343,6 @@ Excursion:
       autoincrement: false
     descripcion:
       type: string()
-      fixed: false
-      unsigned: false
-      primary: false
-      notnull: true
-      autoincrement: false
-    ubicacion:
-      type: string(100)
       fixed: false
       unsigned: false
       primary: false
@@ -7603,9 +7762,9 @@ ExcursionRequisito:
       onDelete: NULL
       onUpdate: NULL
       
-ExcursionInclusion:
+ExcursionIncluible:
   connection: doctrine
-  tableName: excursion_inclusion
+  tableName: excursion_incluible
   actAs:
     Timestampable:
   columns:
@@ -7952,7 +8111,7 @@ ExcursionHasInclusion:
       primary: false
       notnull: true
       autoincrement: false
-    excursion_inclusion_id:
+    excursion_incluible_id:
       type: integer
       fixed: false
       unsigned: false
@@ -7995,8 +8154,8 @@ ExcursionHasInclusion:
       foreignType: many
       onDelete: NULL
       onUpdate: NULL
-    ExcursionInclusion:
-      local: excursion_inclusion_id
+    ExcursionIncluible:
+      local: excursion_incluible_id
       foreign: id
       type: one
       foreignType: many
@@ -8174,6 +8333,7 @@ ExcursionPrecio:
       local: excursion_id
       foreign: id
       type: one
+      foreignType: many
       onDelete: NULL
       onUpdate: NULL
     sfGuardUser:

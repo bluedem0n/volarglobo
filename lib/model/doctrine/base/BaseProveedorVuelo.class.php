@@ -27,10 +27,10 @@ Doctrine_Manager::getInstance()->bindComponent('ProveedorVuelo', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
- * @property sfGuardUser $sfGuardUser
  * @property TipoVuelo $TipoVuelo
  * @property TipoMotivo $TipoMotivo
  * @property TipoTarifa $TipoTarifa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $VueloRestriciones
  * @property Doctrine_Collection $VueloRecomendaciones
  * @property Doctrine_Collection $VueloServicio
@@ -57,10 +57,10 @@ Doctrine_Manager::getInstance()->bindComponent('ProveedorVuelo', 'doctrine');
  * @method integer             getUserId()               Returns the current record's "user_id" value
  * @method string              getUserName()             Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()              Returns the current record's "Empresa" value
- * @method sfGuardUser         getSfGuardUser()          Returns the current record's "sfGuardUser" value
  * @method TipoVuelo           getTipoVuelo()            Returns the current record's "TipoVuelo" value
  * @method TipoMotivo          getTipoMotivo()           Returns the current record's "TipoMotivo" value
  * @method TipoTarifa          getTipoTarifa()           Returns the current record's "TipoTarifa" value
+ * @method sfGuardUser         getSfGuardUser()          Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getVueloRestriciones()    Returns the current record's "VueloRestriciones" collection
  * @method Doctrine_Collection getVueloRecomendaciones() Returns the current record's "VueloRecomendaciones" collection
  * @method Doctrine_Collection getVueloServicio()        Returns the current record's "VueloServicio" collection
@@ -86,10 +86,10 @@ Doctrine_Manager::getInstance()->bindComponent('ProveedorVuelo', 'doctrine');
  * @method ProveedorVuelo      setUserId()               Sets the current record's "user_id" value
  * @method ProveedorVuelo      setUserName()             Sets the current record's "user_name" value
  * @method ProveedorVuelo      setEmpresa()              Sets the current record's "Empresa" value
- * @method ProveedorVuelo      setSfGuardUser()          Sets the current record's "sfGuardUser" value
  * @method ProveedorVuelo      setTipoVuelo()            Sets the current record's "TipoVuelo" value
  * @method ProveedorVuelo      setTipoMotivo()           Sets the current record's "TipoMotivo" value
  * @method ProveedorVuelo      setTipoTarifa()           Sets the current record's "TipoTarifa" value
+ * @method ProveedorVuelo      setSfGuardUser()          Sets the current record's "sfGuardUser" value
  * @method ProveedorVuelo      setVueloRestriciones()    Sets the current record's "VueloRestriciones" collection
  * @method ProveedorVuelo      setVueloRecomendaciones() Sets the current record's "VueloRecomendaciones" collection
  * @method ProveedorVuelo      setVueloServicio()        Sets the current record's "VueloServicio" collection
@@ -280,10 +280,6 @@ abstract class BaseProveedorVuelo extends sfDoctrineRecord
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
 
-        $this->hasOne('sfGuardUser', array(
-             'local' => 'user_id',
-             'foreign' => 'id'));
-
         $this->hasOne('TipoVuelo', array(
              'local' => 'tipo_vuelo_id',
              'foreign' => 'id'));
@@ -294,6 +290,10 @@ abstract class BaseProveedorVuelo extends sfDoctrineRecord
 
         $this->hasOne('TipoTarifa', array(
              'local' => 'tipo_tarifa_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
              'foreign' => 'id'));
 
         $this->hasMany('VueloRestriciones', array(

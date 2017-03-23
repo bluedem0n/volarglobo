@@ -39,6 +39,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @property string $grado_instruccion
  * @property Doctrine_Collection $sfGuardPermission
  * @property Doctrine_Collection $sfGuardUser
+ * @property Doctrine_Collection $Pais
  * @property Doctrine_Collection $TipoPersonal
  * @property Doctrine_Collection $RangoEdad
  * @property Doctrine_Collection $TipoTarifa
@@ -52,7 +53,11 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @property Doctrine_Collection $ProveedorRede
  * @property Doctrine_Collection $ProveedorPago
  * @property Doctrine_Collection $Categoria
+ * @property Doctrine_Collection $Ciudad
+ * @property Doctrine_Collection $Pago
+ * @property Doctrine_Collection $Provincia
  * @property Doctrine_Collection $Ubicacion
+ * @property Doctrine_Collection $GaleriaUbicacion
  * @property Doctrine_Collection $Rede
  * @property Doctrine_Collection $Campo
  * @property Doctrine_Collection $CampoDescuento
@@ -113,7 +118,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @property Doctrine_Collection $ExcursionPolitica
  * @property Doctrine_Collection $ExcursionLugarInteres
  * @property Doctrine_Collection $ExcursionRequisito
- * @property Doctrine_Collection $ExcursionInclusion
+ * @property Doctrine_Collection $ExcursionIncluible
  * @property Doctrine_Collection $ExcursionHasAdicional
  * @property Doctrine_Collection $ExcursionHasPolitica
  * @property Doctrine_Collection $ExcursionHasLugarInteres
@@ -153,6 +158,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method string              getGradoInstruccion()         Returns the current record's "grado_instruccion" value
  * @method Doctrine_Collection getSfGuardPermission()        Returns the current record's "sfGuardPermission" collection
  * @method Doctrine_Collection getSfGuardUser()              Returns the current record's "sfGuardUser" collection
+ * @method Doctrine_Collection getPais()                     Returns the current record's "Pais" collection
  * @method Doctrine_Collection getTipoPersonal()             Returns the current record's "TipoPersonal" collection
  * @method Doctrine_Collection getRangoEdad()                Returns the current record's "RangoEdad" collection
  * @method Doctrine_Collection getTipoTarifa()               Returns the current record's "TipoTarifa" collection
@@ -166,7 +172,11 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method Doctrine_Collection getProveedorRede()            Returns the current record's "ProveedorRede" collection
  * @method Doctrine_Collection getProveedorPago()            Returns the current record's "ProveedorPago" collection
  * @method Doctrine_Collection getCategoria()                Returns the current record's "Categoria" collection
+ * @method Doctrine_Collection getCiudad()                   Returns the current record's "Ciudad" collection
+ * @method Doctrine_Collection getPago()                     Returns the current record's "Pago" collection
+ * @method Doctrine_Collection getProvincia()                Returns the current record's "Provincia" collection
  * @method Doctrine_Collection getUbicacion()                Returns the current record's "Ubicacion" collection
+ * @method Doctrine_Collection getGaleriaUbicacion()         Returns the current record's "GaleriaUbicacion" collection
  * @method Doctrine_Collection getRede()                     Returns the current record's "Rede" collection
  * @method Doctrine_Collection getCampo()                    Returns the current record's "Campo" collection
  * @method Doctrine_Collection getCampoDescuento()           Returns the current record's "CampoDescuento" collection
@@ -227,7 +237,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method Doctrine_Collection getExcursionPolitica()        Returns the current record's "ExcursionPolitica" collection
  * @method Doctrine_Collection getExcursionLugarInteres()    Returns the current record's "ExcursionLugarInteres" collection
  * @method Doctrine_Collection getExcursionRequisito()       Returns the current record's "ExcursionRequisito" collection
- * @method Doctrine_Collection getExcursionInclusion()       Returns the current record's "ExcursionInclusion" collection
+ * @method Doctrine_Collection getExcursionIncluible()       Returns the current record's "ExcursionIncluible" collection
  * @method Doctrine_Collection getExcursionHasAdicional()    Returns the current record's "ExcursionHasAdicional" collection
  * @method Doctrine_Collection getExcursionHasPolitica()     Returns the current record's "ExcursionHasPolitica" collection
  * @method Doctrine_Collection getExcursionHasLugarInteres() Returns the current record's "ExcursionHasLugarInteres" collection
@@ -266,6 +276,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method Empresa             setGradoInstruccion()         Sets the current record's "grado_instruccion" value
  * @method Empresa             setSfGuardPermission()        Sets the current record's "sfGuardPermission" collection
  * @method Empresa             setSfGuardUser()              Sets the current record's "sfGuardUser" collection
+ * @method Empresa             setPais()                     Sets the current record's "Pais" collection
  * @method Empresa             setTipoPersonal()             Sets the current record's "TipoPersonal" collection
  * @method Empresa             setRangoEdad()                Sets the current record's "RangoEdad" collection
  * @method Empresa             setTipoTarifa()               Sets the current record's "TipoTarifa" collection
@@ -279,7 +290,11 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method Empresa             setProveedorRede()            Sets the current record's "ProveedorRede" collection
  * @method Empresa             setProveedorPago()            Sets the current record's "ProveedorPago" collection
  * @method Empresa             setCategoria()                Sets the current record's "Categoria" collection
+ * @method Empresa             setCiudad()                   Sets the current record's "Ciudad" collection
+ * @method Empresa             setPago()                     Sets the current record's "Pago" collection
+ * @method Empresa             setProvincia()                Sets the current record's "Provincia" collection
  * @method Empresa             setUbicacion()                Sets the current record's "Ubicacion" collection
+ * @method Empresa             setGaleriaUbicacion()         Sets the current record's "GaleriaUbicacion" collection
  * @method Empresa             setRede()                     Sets the current record's "Rede" collection
  * @method Empresa             setCampo()                    Sets the current record's "Campo" collection
  * @method Empresa             setCampoDescuento()           Sets the current record's "CampoDescuento" collection
@@ -340,7 +355,7 @@ Doctrine_Manager::getInstance()->bindComponent('Empresa', 'doctrine');
  * @method Empresa             setExcursionPolitica()        Sets the current record's "ExcursionPolitica" collection
  * @method Empresa             setExcursionLugarInteres()    Sets the current record's "ExcursionLugarInteres" collection
  * @method Empresa             setExcursionRequisito()       Sets the current record's "ExcursionRequisito" collection
- * @method Empresa             setExcursionInclusion()       Sets the current record's "ExcursionInclusion" collection
+ * @method Empresa             setExcursionIncluible()       Sets the current record's "ExcursionIncluible" collection
  * @method Empresa             setExcursionHasAdicional()    Sets the current record's "ExcursionHasAdicional" collection
  * @method Empresa             setExcursionHasPolitica()     Sets the current record's "ExcursionHasPolitica" collection
  * @method Empresa             setExcursionHasLugarInteres() Sets the current record's "ExcursionHasLugarInteres" collection
@@ -638,6 +653,10 @@ abstract class BaseEmpresa extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'empresa_id'));
 
+        $this->hasMany('Pais', array(
+             'local' => 'id',
+             'foreign' => 'empresa_id'));
+
         $this->hasMany('TipoPersonal', array(
              'local' => 'id',
              'foreign' => 'empresa_id'));
@@ -690,7 +709,23 @@ abstract class BaseEmpresa extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'empresa_id'));
 
+        $this->hasMany('Ciudad', array(
+             'local' => 'id',
+             'foreign' => 'empresa_id'));
+
+        $this->hasMany('Pago', array(
+             'local' => 'id',
+             'foreign' => 'empresa_id'));
+
+        $this->hasMany('Provincia', array(
+             'local' => 'id',
+             'foreign' => 'empresa_id'));
+
         $this->hasMany('Ubicacion', array(
+             'local' => 'id',
+             'foreign' => 'empresa_id'));
+
+        $this->hasMany('GaleriaUbicacion', array(
              'local' => 'id',
              'foreign' => 'empresa_id'));
 
@@ -934,7 +969,7 @@ abstract class BaseEmpresa extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'empresa_id'));
 
-        $this->hasMany('ExcursionInclusion', array(
+        $this->hasMany('ExcursionIncluible', array(
              'local' => 'id',
              'foreign' => 'empresa_id'));
 

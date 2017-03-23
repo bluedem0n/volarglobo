@@ -16,10 +16,10 @@ Doctrine_Manager::getInstance()->bindComponent('Provincia', 'doctrine');
  * @property string $observacion
  * @property integer $user_id
  * @property string $user_name
- * @property Doctrine_Collection $Ciudad
+ * @property Empresa $Empresa
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Proveedor
- * @property Doctrine_Collection $Ubicacion
+ * @property Doctrine_Collection $Ciudad
  * @property Doctrine_Collection $Hospedaje
  * @property Doctrine_Collection $VehiculoPrecio
  * 
@@ -32,10 +32,10 @@ Doctrine_Manager::getInstance()->bindComponent('Provincia', 'doctrine');
  * @method string              getObservacion()    Returns the current record's "observacion" value
  * @method integer             getUserId()         Returns the current record's "user_id" value
  * @method string              getUserName()       Returns the current record's "user_name" value
- * @method Doctrine_Collection getCiudad()         Returns the current record's "Ciudad" collection
+ * @method Empresa             getEmpresa()        Returns the current record's "Empresa" value
  * @method sfGuardUser         getSfGuardUser()    Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getProveedor()      Returns the current record's "Proveedor" collection
- * @method Doctrine_Collection getUbicacion()      Returns the current record's "Ubicacion" collection
+ * @method Doctrine_Collection getCiudad()         Returns the current record's "Ciudad" collection
  * @method Doctrine_Collection getHospedaje()      Returns the current record's "Hospedaje" collection
  * @method Doctrine_Collection getVehiculoPrecio() Returns the current record's "VehiculoPrecio" collection
  * @method Provincia           setId()             Sets the current record's "id" value
@@ -47,10 +47,10 @@ Doctrine_Manager::getInstance()->bindComponent('Provincia', 'doctrine');
  * @method Provincia           setObservacion()    Sets the current record's "observacion" value
  * @method Provincia           setUserId()         Sets the current record's "user_id" value
  * @method Provincia           setUserName()       Sets the current record's "user_name" value
- * @method Provincia           setCiudad()         Sets the current record's "Ciudad" collection
+ * @method Provincia           setEmpresa()        Sets the current record's "Empresa" value
  * @method Provincia           setSfGuardUser()    Sets the current record's "sfGuardUser" value
  * @method Provincia           setProveedor()      Sets the current record's "Proveedor" collection
- * @method Provincia           setUbicacion()      Sets the current record's "Ubicacion" collection
+ * @method Provincia           setCiudad()         Sets the current record's "Ciudad" collection
  * @method Provincia           setHospedaje()      Sets the current record's "Hospedaje" collection
  * @method Provincia           setVehiculoPrecio() Sets the current record's "VehiculoPrecio" collection
  * 
@@ -148,9 +148,11 @@ abstract class BaseProvincia extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Ciudad', array(
-             'local' => 'id',
-             'foreign' => 'provincia_id'));
+        $this->hasOne('Empresa', array(
+             'local' => 'empresa_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
 
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
@@ -160,7 +162,7 @@ abstract class BaseProvincia extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'provincia_id'));
 
-        $this->hasMany('Ubicacion', array(
+        $this->hasMany('Ciudad', array(
              'local' => 'id',
              'foreign' => 'provincia_id'));
 

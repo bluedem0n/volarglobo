@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRecomendaciones', 'doctrine'
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $VueloRecomendaciones
  * 
  * @method integer             getId()                   Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRecomendaciones', 'doctrine'
  * @method integer             getUserId()               Returns the current record's "user_id" value
  * @method string              getUserName()             Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()              Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()          Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getVueloRecomendaciones() Returns the current record's "VueloRecomendaciones" collection
  * @method TipoRecomendaciones setId()                   Sets the current record's "id" value
  * @method TipoRecomendaciones setEmpresaId()            Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoRecomendaciones', 'doctrine'
  * @method TipoRecomendaciones setUserId()               Sets the current record's "user_id" value
  * @method TipoRecomendaciones setUserName()             Sets the current record's "user_name" value
  * @method TipoRecomendaciones setEmpresa()              Sets the current record's "Empresa" value
+ * @method TipoRecomendaciones setSfGuardUser()          Sets the current record's "sfGuardUser" value
  * @method TipoRecomendaciones setVueloRecomendaciones() Sets the current record's "VueloRecomendaciones" collection
  * 
  * @package    hub-usmjesus
@@ -141,6 +144,10 @@ abstract class BaseTipoRecomendaciones extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('VueloRecomendaciones', array(
              'local' => 'id',

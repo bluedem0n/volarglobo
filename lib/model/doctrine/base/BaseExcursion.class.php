@@ -9,10 +9,12 @@ Doctrine_Manager::getInstance()->bindComponent('Excursion', 'doctrine');
  * 
  * @property integer $id
  * @property integer $empresa_id
+ * @property integer $provincia_id
+ * @property integer $ciudad_id
+ * @property integer $ubicacion_id
  * @property string $nombre
  * @property string $imagen
  * @property string $descripcion
- * @property string $ubicacion
  * @property string $fecha
  * @property string $tipo_publico
  * @property integer $capacidad_persona
@@ -29,10 +31,12 @@ Doctrine_Manager::getInstance()->bindComponent('Excursion', 'doctrine');
  * 
  * @method integer             getId()                       Returns the current record's "id" value
  * @method integer             getEmpresaId()                Returns the current record's "empresa_id" value
+ * @method integer             getProvinciaId()              Returns the current record's "provincia_id" value
+ * @method integer             getCiudadId()                 Returns the current record's "ciudad_id" value
+ * @method integer             getUbicacionId()              Returns the current record's "ubicacion_id" value
  * @method string              getNombre()                   Returns the current record's "nombre" value
  * @method string              getImagen()                   Returns the current record's "imagen" value
  * @method string              getDescripcion()              Returns the current record's "descripcion" value
- * @method string              getUbicacion()                Returns the current record's "ubicacion" value
  * @method string              getFecha()                    Returns the current record's "fecha" value
  * @method string              getTipoPublico()              Returns the current record's "tipo_publico" value
  * @method integer             getCapacidadPersona()         Returns the current record's "capacidad_persona" value
@@ -48,10 +52,12 @@ Doctrine_Manager::getInstance()->bindComponent('Excursion', 'doctrine');
  * @method Doctrine_Collection getExcursionPrecio()          Returns the current record's "ExcursionPrecio" collection
  * @method Excursion           setId()                       Sets the current record's "id" value
  * @method Excursion           setEmpresaId()                Sets the current record's "empresa_id" value
+ * @method Excursion           setProvinciaId()              Sets the current record's "provincia_id" value
+ * @method Excursion           setCiudadId()                 Sets the current record's "ciudad_id" value
+ * @method Excursion           setUbicacionId()              Sets the current record's "ubicacion_id" value
  * @method Excursion           setNombre()                   Sets the current record's "nombre" value
  * @method Excursion           setImagen()                   Sets the current record's "imagen" value
  * @method Excursion           setDescripcion()              Sets the current record's "descripcion" value
- * @method Excursion           setUbicacion()                Sets the current record's "ubicacion" value
  * @method Excursion           setFecha()                    Sets the current record's "fecha" value
  * @method Excursion           setTipoPublico()              Sets the current record's "tipo_publico" value
  * @method Excursion           setCapacidadPersona()         Sets the current record's "capacidad_persona" value
@@ -92,6 +98,30 @@ abstract class BaseExcursion extends sfDoctrineRecord
              'default' => 1,
              'autoincrement' => false,
              ));
+        $this->hasColumn('provincia_id', 'integer', null, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             ));
+        $this->hasColumn('ciudad_id', 'integer', null, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             ));
+        $this->hasColumn('ubicacion_id', 'integer', null, array(
+             'type' => 'integer',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             ));
         $this->hasColumn('nombre', 'string', 100, array(
              'type' => 'string',
              'fixed' => 0,
@@ -118,15 +148,6 @@ abstract class BaseExcursion extends sfDoctrineRecord
              'notnull' => true,
              'autoincrement' => false,
              'length' => '',
-             ));
-        $this->hasColumn('ubicacion', 'string', 100, array(
-             'type' => 'string',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'notnull' => true,
-             'autoincrement' => false,
-             'length' => 100,
              ));
         $this->hasColumn('fecha', 'string', 100, array(
              'type' => 'string',

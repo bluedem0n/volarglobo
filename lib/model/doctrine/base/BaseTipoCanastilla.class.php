@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCanastilla', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Canastilla
  * 
  * @method integer             getId()          Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCanastilla', 'doctrine');
  * @method integer             getUserId()      Returns the current record's "user_id" value
  * @method string              getUserName()    Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()     Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser() Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getCanastilla()  Returns the current record's "Canastilla" collection
  * @method TipoCanastilla      setId()          Sets the current record's "id" value
  * @method TipoCanastilla      setEmpresaId()   Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoCanastilla', 'doctrine');
  * @method TipoCanastilla      setUserId()      Sets the current record's "user_id" value
  * @method TipoCanastilla      setUserName()    Sets the current record's "user_name" value
  * @method TipoCanastilla      setEmpresa()     Sets the current record's "Empresa" value
+ * @method TipoCanastilla      setSfGuardUser() Sets the current record's "sfGuardUser" value
  * @method TipoCanastilla      setCanastilla()  Sets the current record's "Canastilla" collection
  * 
  * @package    hub-usmjesus
@@ -141,6 +144,10 @@ abstract class BaseTipoCanastilla extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('Canastilla', array(
              'local' => 'id',

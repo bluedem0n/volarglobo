@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('Ciudad', 'doctrine');
  * @property string $observacion
  * @property integer $user_id
  * @property string $user_name
+ * @property Empresa $Empresa
  * @property Provincia $Provincia
  * @property Provincia $Provincia2
  * @property sfGuardUser $sfGuardUser
@@ -35,6 +36,7 @@ Doctrine_Manager::getInstance()->bindComponent('Ciudad', 'doctrine');
  * @method string              getObservacion()        Returns the current record's "observacion" value
  * @method integer             getUserId()             Returns the current record's "user_id" value
  * @method string              getUserName()           Returns the current record's "user_name" value
+ * @method Empresa             getEmpresa()            Returns the current record's "Empresa" value
  * @method Provincia           getProvincia()          Returns the current record's "Provincia" value
  * @method Provincia           getProvincia2()         Returns the current record's "Provincia2" value
  * @method sfGuardUser         getSfGuardUser()        Returns the current record's "sfGuardUser" value
@@ -52,6 +54,7 @@ Doctrine_Manager::getInstance()->bindComponent('Ciudad', 'doctrine');
  * @method Ciudad              setObservacion()        Sets the current record's "observacion" value
  * @method Ciudad              setUserId()             Sets the current record's "user_id" value
  * @method Ciudad              setUserName()           Sets the current record's "user_name" value
+ * @method Ciudad              setEmpresa()            Sets the current record's "Empresa" value
  * @method Ciudad              setProvincia()          Sets the current record's "Provincia" value
  * @method Ciudad              setProvincia2()         Sets the current record's "Provincia2" value
  * @method Ciudad              setSfGuardUser()        Sets the current record's "sfGuardUser" value
@@ -161,13 +164,23 @@ abstract class BaseCiudad extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Empresa', array(
+             'local' => 'empresa_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
+
         $this->hasOne('Provincia', array(
              'local' => 'provincia_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
 
         $this->hasOne('Provincia as Provincia2', array(
              'local' => 'provincia_final_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
 
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',

@@ -16,7 +16,7 @@ abstract class BaseProvinciaFinalForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
-      'empresa_id'  => new sfWidgetFormInputText(),
+      'empresa_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => false)),
       'codigo'      => new sfWidgetFormInputText(),
       'nombre'      => new sfWidgetFormInputText(),
       'imagen'      => new sfWidgetFormInputText(),
@@ -30,7 +30,7 @@ abstract class BaseProvinciaFinalForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'empresa_id'  => new sfValidatorInteger(array('required' => false)),
+      'empresa_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'required' => false)),
       'codigo'      => new sfValidatorString(array('max_length' => 50)),
       'nombre'      => new sfValidatorString(array('max_length' => 255)),
       'imagen'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),

@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('Pais', 'doctrine');
  * @property string $observacion
  * @property integer $user_id
  * @property string $user_name
+ * @property Empresa $Empresa
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Cliente
  * 
@@ -30,6 +31,7 @@ Doctrine_Manager::getInstance()->bindComponent('Pais', 'doctrine');
  * @method string              getObservacion()   Returns the current record's "observacion" value
  * @method integer             getUserId()        Returns the current record's "user_id" value
  * @method string              getUserName()      Returns the current record's "user_name" value
+ * @method Empresa             getEmpresa()       Returns the current record's "Empresa" value
  * @method sfGuardUser         getSfGuardUser()   Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getCliente()       Returns the current record's "Cliente" collection
  * @method Pais                setId()            Sets the current record's "id" value
@@ -42,6 +44,7 @@ Doctrine_Manager::getInstance()->bindComponent('Pais', 'doctrine');
  * @method Pais                setObservacion()   Sets the current record's "observacion" value
  * @method Pais                setUserId()        Sets the current record's "user_id" value
  * @method Pais                setUserName()      Sets the current record's "user_name" value
+ * @method Pais                setEmpresa()       Sets the current record's "Empresa" value
  * @method Pais                setSfGuardUser()   Sets the current record's "sfGuardUser" value
  * @method Pais                setCliente()       Sets the current record's "Cliente" collection
  * 
@@ -148,6 +151,12 @@ abstract class BasePais extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Empresa', array(
+             'local' => 'empresa_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
+
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id'));

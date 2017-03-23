@@ -17,27 +17,30 @@ Doctrine_Manager::getInstance()->bindComponent('TipoLona', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * 
- * @method integer  getId()          Returns the current record's "id" value
- * @method integer  getEmpresaId()   Returns the current record's "empresa_id" value
- * @method string   getNombre()      Returns the current record's "nombre" value
- * @method string   getDescripcion() Returns the current record's "descripcion" value
- * @method string   getOrden()       Returns the current record's "orden" value
- * @method string   getImagen()      Returns the current record's "imagen" value
- * @method integer  getStatus()      Returns the current record's "status" value
- * @method integer  getUserId()      Returns the current record's "user_id" value
- * @method string   getUserName()    Returns the current record's "user_name" value
- * @method Empresa  getEmpresa()     Returns the current record's "Empresa" value
- * @method TipoLona setId()          Sets the current record's "id" value
- * @method TipoLona setEmpresaId()   Sets the current record's "empresa_id" value
- * @method TipoLona setNombre()      Sets the current record's "nombre" value
- * @method TipoLona setDescripcion() Sets the current record's "descripcion" value
- * @method TipoLona setOrden()       Sets the current record's "orden" value
- * @method TipoLona setImagen()      Sets the current record's "imagen" value
- * @method TipoLona setStatus()      Sets the current record's "status" value
- * @method TipoLona setUserId()      Sets the current record's "user_id" value
- * @method TipoLona setUserName()    Sets the current record's "user_name" value
- * @method TipoLona setEmpresa()     Sets the current record's "Empresa" value
+ * @method integer     getId()          Returns the current record's "id" value
+ * @method integer     getEmpresaId()   Returns the current record's "empresa_id" value
+ * @method string      getNombre()      Returns the current record's "nombre" value
+ * @method string      getDescripcion() Returns the current record's "descripcion" value
+ * @method string      getOrden()       Returns the current record's "orden" value
+ * @method string      getImagen()      Returns the current record's "imagen" value
+ * @method integer     getStatus()      Returns the current record's "status" value
+ * @method integer     getUserId()      Returns the current record's "user_id" value
+ * @method string      getUserName()    Returns the current record's "user_name" value
+ * @method Empresa     getEmpresa()     Returns the current record's "Empresa" value
+ * @method sfGuardUser getSfGuardUser() Returns the current record's "sfGuardUser" value
+ * @method TipoLona    setId()          Sets the current record's "id" value
+ * @method TipoLona    setEmpresaId()   Sets the current record's "empresa_id" value
+ * @method TipoLona    setNombre()      Sets the current record's "nombre" value
+ * @method TipoLona    setDescripcion() Sets the current record's "descripcion" value
+ * @method TipoLona    setOrden()       Sets the current record's "orden" value
+ * @method TipoLona    setImagen()      Sets the current record's "imagen" value
+ * @method TipoLona    setStatus()      Sets the current record's "status" value
+ * @method TipoLona    setUserId()      Sets the current record's "user_id" value
+ * @method TipoLona    setUserName()    Sets the current record's "user_name" value
+ * @method TipoLona    setEmpresa()     Sets the current record's "Empresa" value
+ * @method TipoLona    setSfGuardUser() Sets the current record's "sfGuardUser" value
  * 
  * @package    hub-usmjesus
  * @subpackage model
@@ -138,6 +141,10 @@ abstract class BaseTipoLona extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

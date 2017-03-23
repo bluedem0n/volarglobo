@@ -16,7 +16,7 @@ abstract class BaseCiudadFinalForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                 => new sfWidgetFormInputHidden(),
-      'empresa_id'         => new sfWidgetFormInputText(),
+      'empresa_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => false)),
       'provincia_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Provincia'), 'add_empty' => false)),
       'provincia_final_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Provincia2'), 'add_empty' => true)),
       'codigo'             => new sfWidgetFormInputText(),
@@ -31,7 +31,7 @@ abstract class BaseCiudadFinalForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'empresa_id'         => new sfValidatorInteger(array('required' => false)),
+      'empresa_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'required' => false)),
       'provincia_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Provincia'))),
       'provincia_final_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Provincia2'), 'required' => false)),
       'codigo'             => new sfValidatorString(array('max_length' => 25, 'required' => false)),

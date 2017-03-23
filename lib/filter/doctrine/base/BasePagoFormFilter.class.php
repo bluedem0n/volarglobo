@@ -13,26 +13,26 @@ abstract class BasePagoFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'empresa_id'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'empresa_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => true)),
       'nombre'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'descripcion' => new sfWidgetFormFilterInput(),
       'orden'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'imagen'      => new sfWidgetFormFilterInput(),
       'status'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'user_id'     => new sfWidgetFormFilterInput(),
+      'user_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'user_name'   => new sfWidgetFormFilterInput(),
       'created_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'empresa_id'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'empresa_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Empresa'), 'column' => 'id')),
       'nombre'      => new sfValidatorPass(array('required' => false)),
       'descripcion' => new sfValidatorPass(array('required' => false)),
       'orden'       => new sfValidatorPass(array('required' => false)),
       'imagen'      => new sfValidatorPass(array('required' => false)),
       'status'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'user_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'user_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
       'user_name'   => new sfValidatorPass(array('required' => false)),
       'created_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -56,13 +56,13 @@ abstract class BasePagoFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'          => 'Number',
-      'empresa_id'  => 'Number',
+      'empresa_id'  => 'ForeignKey',
       'nombre'      => 'Text',
       'descripcion' => 'Text',
       'orden'       => 'Text',
       'imagen'      => 'Text',
       'status'      => 'Number',
-      'user_id'     => 'Number',
+      'user_id'     => 'ForeignKey',
       'user_name'   => 'Text',
       'created_at'  => 'Date',
       'updated_at'  => 'Date',

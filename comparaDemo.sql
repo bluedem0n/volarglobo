@@ -42,11 +42,22 @@ INSERT INTO `sf_guard_group` (`id`, `name`, `description`, `created_at`, `update
 INSERT INTO `sf_guard_permission` (`id`, `empresa_id`, `name`, `description`, `detalles`, `status`, `created_at`, `updated_at`) VALUES(1, 1, 'administrador', 'Permiso de Administrador', NULL, 0, '2012-05-26 16:42:18', '2012-05-26 16:42:18');
 
 
-
 INSERT INTO `tipo_personal` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(1, 1, 'Oficina', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
 INSERT INTO `tipo_personal` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(2, 1, 'Piloto', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
 INSERT INTO `tipo_personal` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(3, 1, 'Jefe de tripulante', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
 INSERT INTO `tipo_personal` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(4, 1, 'Tripulante', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
+
+
+
+--
+-- Volcado de datos para la tabla `sf_guard_user`
+--
+
+INSERT INTO `sf_guard_user` (`id`, `first_name`, `last_name`, `identificacion`, `fecha_nacimiento`, `direcion`, `telefono_principal`,  `sexo`, `edo_civil`,  `nacionalidad`, `empresa_id`, `ocupacion`, `titulo`, `grado_instruccion`, `email_address`, `username`, `algorithm`, `salt`, `password`,  `is_active`, `is_super_admin`, `last_login`, `alerta`, `observacion`, `created_at`, `updated_at`) 
+VALUES                      (1,   'Jesus',         'Salazar',       '',          '1985-02-25',          '',         '04149210498',        1   ,   '' ,            '',           1,             '',        '',           '',             'usmjesus@gmail.com', 'admin', 'sha1', '7b92a2dd5e73580100da0461f7d8b127', 'bf5b7e5db8404724461b50b08ef70e8e402ee26a',  1, 1, '2017-01-31 09:53:54', '', '', '2012-08-02 17:06:32', '2017-01-31 09:53:54');
+
+
+
 
 INSERT INTO `tipo_vuelo` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(1, 1, 'Privado', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
 INSERT INTO `tipo_vuelo` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(2, 1, 'Compartido', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
@@ -72,13 +83,6 @@ INSERT INTO `tipo_recomendaciones` (`id`, `empresa_id`, `nombre`, `descripcion`,
 INSERT INTO `tipo_recomendaciones` (`id`, `empresa_id`, `nombre`, `descripcion`, `orden`, `imagen`, `status`, `user_id`, `user_name`, `created_at`, `updated_at`) VALUES(3, 1, 'Ser puntuales, a fin de poder abordar a tiempo y evitar así la suspensión de su vuelo', '', '1', '', 1, 1, 'Salazar Jesus', '2017-01-26 08:12:57', '2017-01-26 10:14:48');
 
 
-
---
--- Volcado de datos para la tabla `sf_guard_user`
---
-
-INSERT INTO `sf_guard_user` (`id`, `first_name`, `last_name`, `identificacion`, `fecha_nacimiento`, `direcion`, `telefono_principal`,  `sexo`, `edo_civil`,  `nacionalidad`, `empresa_id`, `ocupacion`, `titulo`, `grado_instruccion`, `email_address`, `username`, `algorithm`, `salt`, `password`,  `is_active`, `is_super_admin`, `last_login`, `alerta`, `observacion`, `created_at`, `updated_at`) 
-VALUES                      (1,   'Jesus',         'Salazar',       '',          '1985-02-25',          '',         '04149210498',        1   ,   '' ,            '',           1,             '',        '',           '',             'usmjesus@gmail.com', 'admin', 'sha1', '7b92a2dd5e73580100da0461f7d8b127', 'bf5b7e5db8404724461b50b08ef70e8e402ee26a',  1, 1, '2017-01-31 09:53:54', '', '', '2012-08-02 17:06:32', '2017-01-31 09:53:54');
 
 --
 -- Volcado de datos para la tabla `categoria`

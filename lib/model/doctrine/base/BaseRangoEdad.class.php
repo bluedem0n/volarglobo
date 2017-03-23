@@ -17,6 +17,7 @@ Doctrine_Manager::getInstance()->bindComponent('RangoEdad', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $TipoTarifaPrecio
  * 
  * @method integer             getId()               Returns the current record's "id" value
@@ -29,6 +30,7 @@ Doctrine_Manager::getInstance()->bindComponent('RangoEdad', 'doctrine');
  * @method integer             getUserId()           Returns the current record's "user_id" value
  * @method string              getUserName()         Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()          Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getTipoTarifaPrecio() Returns the current record's "TipoTarifaPrecio" collection
  * @method RangoEdad           setId()               Sets the current record's "id" value
  * @method RangoEdad           setEmpresaId()        Sets the current record's "empresa_id" value
@@ -40,6 +42,7 @@ Doctrine_Manager::getInstance()->bindComponent('RangoEdad', 'doctrine');
  * @method RangoEdad           setUserId()           Sets the current record's "user_id" value
  * @method RangoEdad           setUserName()         Sets the current record's "user_name" value
  * @method RangoEdad           setEmpresa()          Sets the current record's "Empresa" value
+ * @method RangoEdad           setSfGuardUser()      Sets the current record's "sfGuardUser" value
  * @method RangoEdad           setTipoTarifaPrecio() Sets the current record's "TipoTarifaPrecio" collection
  * 
  * @package    hub-usmjesus
@@ -139,6 +142,10 @@ abstract class BaseRangoEdad extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('TipoTarifaPrecio', array(
              'local' => 'id',

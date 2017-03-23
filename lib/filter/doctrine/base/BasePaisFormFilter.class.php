@@ -13,7 +13,7 @@ abstract class BasePaisFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'empresa_id'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'empresa_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => true)),
       'continente_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'codigo'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'nombre'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -27,7 +27,7 @@ abstract class BasePaisFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'empresa_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'empresa_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Empresa'), 'column' => 'id')),
       'continente_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'codigo'        => new sfValidatorPass(array('required' => false)),
       'nombre'        => new sfValidatorPass(array('required' => false)),
@@ -58,7 +58,7 @@ abstract class BasePaisFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'            => 'Number',
-      'empresa_id'    => 'Number',
+      'empresa_id'    => 'ForeignKey',
       'continente_id' => 'Number',
       'codigo'        => 'Text',
       'nombre'        => 'Text',

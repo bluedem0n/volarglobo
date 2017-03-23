@@ -16,6 +16,8 @@ Doctrine_Manager::getInstance()->bindComponent('Pago', 'doctrine');
  * @property integer $status
  * @property integer $user_id
  * @property string $user_name
+ * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $ProveedorPago
  * @property Doctrine_Collection $HospedajePago
  * 
@@ -28,6 +30,8 @@ Doctrine_Manager::getInstance()->bindComponent('Pago', 'doctrine');
  * @method integer             getStatus()        Returns the current record's "status" value
  * @method integer             getUserId()        Returns the current record's "user_id" value
  * @method string              getUserName()      Returns the current record's "user_name" value
+ * @method Empresa             getEmpresa()       Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()   Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getProveedorPago() Returns the current record's "ProveedorPago" collection
  * @method Doctrine_Collection getHospedajePago() Returns the current record's "HospedajePago" collection
  * @method Pago                setId()            Sets the current record's "id" value
@@ -39,6 +43,8 @@ Doctrine_Manager::getInstance()->bindComponent('Pago', 'doctrine');
  * @method Pago                setStatus()        Sets the current record's "status" value
  * @method Pago                setUserId()        Sets the current record's "user_id" value
  * @method Pago                setUserName()      Sets the current record's "user_name" value
+ * @method Pago                setEmpresa()       Sets the current record's "Empresa" value
+ * @method Pago                setSfGuardUser()   Sets the current record's "sfGuardUser" value
  * @method Pago                setProveedorPago() Sets the current record's "ProveedorPago" collection
  * @method Pago                setHospedajePago() Sets the current record's "HospedajePago" collection
  * 
@@ -136,6 +142,16 @@ abstract class BasePago extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Empresa', array(
+             'local' => 'empresa_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE',
+             'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
+
         $this->hasMany('ProveedorPago', array(
              'local' => 'id',
              'foreign' => 'pago_id'));

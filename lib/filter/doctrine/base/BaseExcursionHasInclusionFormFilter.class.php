@@ -15,7 +15,7 @@ abstract class BaseExcursionHasInclusionFormFilter extends BaseFormFilterDoctrin
     $this->setWidgets(array(
       'empresa_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empresa'), 'add_empty' => true)),
       'excursion_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Excursion'), 'add_empty' => true)),
-      'excursion_inclusion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ExcursionInclusion'), 'add_empty' => true)),
+      'excursion_incluible_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ExcursionIncluible'), 'add_empty' => true)),
       'valor'                  => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'user_id'                => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'user_name'              => new sfWidgetFormFilterInput(),
@@ -26,7 +26,7 @@ abstract class BaseExcursionHasInclusionFormFilter extends BaseFormFilterDoctrin
     $this->setValidators(array(
       'empresa_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Empresa'), 'column' => 'id')),
       'excursion_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Excursion'), 'column' => 'id')),
-      'excursion_inclusion_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('ExcursionInclusion'), 'column' => 'id')),
+      'excursion_incluible_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('ExcursionIncluible'), 'column' => 'id')),
       'valor'                  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'user_id'                => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
       'user_name'              => new sfValidatorPass(array('required' => false)),
@@ -54,7 +54,7 @@ abstract class BaseExcursionHasInclusionFormFilter extends BaseFormFilterDoctrin
       'id'                     => 'Number',
       'empresa_id'             => 'ForeignKey',
       'excursion_id'           => 'ForeignKey',
-      'excursion_inclusion_id' => 'ForeignKey',
+      'excursion_incluible_id' => 'ForeignKey',
       'valor'                  => 'Number',
       'user_id'                => 'ForeignKey',
       'user_name'              => 'Text',

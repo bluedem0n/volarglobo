@@ -38,6 +38,10 @@
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property Doctrine_Collection $Pais
+ * @property Doctrine_Collection $RangoEdad
+ * @property Doctrine_Collection $TipoTarifa
+ * @property Doctrine_Collection $TipoTarifaPrecio
+ * @property Doctrine_Collection $TipoCliente
  * @property Doctrine_Collection $Proveedor
  * @property Doctrine_Collection $ProveedorSucursal
  * @property Doctrine_Collection $GaleriaProveedor
@@ -47,14 +51,22 @@
  * @property Doctrine_Collection $ProveedorPago
  * @property Doctrine_Collection $Categoria
  * @property Doctrine_Collection $Ciudad
+ * @property Doctrine_Collection $Pago
  * @property Doctrine_Collection $Provincia
  * @property Doctrine_Collection $Ubicacion
+ * @property Doctrine_Collection $GaleriaUbicacion
  * @property Doctrine_Collection $Rede
  * @property Doctrine_Collection $Campo
  * @property Doctrine_Collection $CampoDescuento
  * @property Doctrine_Collection $CategoriaFaq
  * @property Doctrine_Collection $DetalleFaq
  * @property Doctrine_Collection $EmpresaSeccion
+ * @property Doctrine_Collection $TipoVuelo
+ * @property Doctrine_Collection $TipoMotivo
+ * @property Doctrine_Collection $TipoLona
+ * @property Doctrine_Collection $TipoRestriciones
+ * @property Doctrine_Collection $TipoRecomendaciones
+ * @property Doctrine_Collection $Globo
  * @property Doctrine_Collection $MantenimientoGlobo
  * @property Doctrine_Collection $ProveedorVuelo
  * @property Doctrine_Collection $VueloRestriciones
@@ -66,10 +78,13 @@
  * @property Doctrine_Collection $Marca
  * @property Doctrine_Collection $Quemador
  * @property Doctrine_Collection $MantenimientoQuemador
+ * @property Doctrine_Collection $TipoCanastilla
  * @property Doctrine_Collection $Canastilla
  * @property Doctrine_Collection $MantenimientoCanastilla
  * @property Doctrine_Collection $Tanque
  * @property Doctrine_Collection $MantenimientoTanque
+ * @property Doctrine_Collection $TipoHabitacion
+ * @property Doctrine_Collection $TipoCama
  * @property Doctrine_Collection $Hospedaje
  * @property Doctrine_Collection $HospedajeHabitacion
  * @property Doctrine_Collection $GaleriaHospedaje
@@ -100,7 +115,7 @@
  * @property Doctrine_Collection $ExcursionPolitica
  * @property Doctrine_Collection $ExcursionLugarInteres
  * @property Doctrine_Collection $ExcursionRequisito
- * @property Doctrine_Collection $ExcursionInclusion
+ * @property Doctrine_Collection $ExcursionIncluible
  * @property Doctrine_Collection $ExcursionHasAdicional
  * @property Doctrine_Collection $ExcursionHasPolitica
  * @property Doctrine_Collection $ExcursionHasLugarInteres
@@ -141,6 +156,10 @@
  * @method sfGuardRememberKey    getRememberKeys()             Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()           Returns the current record's "ForgotPassword" value
  * @method Doctrine_Collection   getPais()                     Returns the current record's "Pais" collection
+ * @method Doctrine_Collection   getRangoEdad()                Returns the current record's "RangoEdad" collection
+ * @method Doctrine_Collection   getTipoTarifa()               Returns the current record's "TipoTarifa" collection
+ * @method Doctrine_Collection   getTipoTarifaPrecio()         Returns the current record's "TipoTarifaPrecio" collection
+ * @method Doctrine_Collection   getTipoCliente()              Returns the current record's "TipoCliente" collection
  * @method Doctrine_Collection   getProveedor()                Returns the current record's "Proveedor" collection
  * @method Doctrine_Collection   getProveedorSucursal()        Returns the current record's "ProveedorSucursal" collection
  * @method Doctrine_Collection   getGaleriaProveedor()         Returns the current record's "GaleriaProveedor" collection
@@ -150,14 +169,22 @@
  * @method Doctrine_Collection   getProveedorPago()            Returns the current record's "ProveedorPago" collection
  * @method Doctrine_Collection   getCategoria()                Returns the current record's "Categoria" collection
  * @method Doctrine_Collection   getCiudad()                   Returns the current record's "Ciudad" collection
+ * @method Doctrine_Collection   getPago()                     Returns the current record's "Pago" collection
  * @method Doctrine_Collection   getProvincia()                Returns the current record's "Provincia" collection
  * @method Doctrine_Collection   getUbicacion()                Returns the current record's "Ubicacion" collection
+ * @method Doctrine_Collection   getGaleriaUbicacion()         Returns the current record's "GaleriaUbicacion" collection
  * @method Doctrine_Collection   getRede()                     Returns the current record's "Rede" collection
  * @method Doctrine_Collection   getCampo()                    Returns the current record's "Campo" collection
  * @method Doctrine_Collection   getCampoDescuento()           Returns the current record's "CampoDescuento" collection
  * @method Doctrine_Collection   getCategoriaFaq()             Returns the current record's "CategoriaFaq" collection
  * @method Doctrine_Collection   getDetalleFaq()               Returns the current record's "DetalleFaq" collection
  * @method Doctrine_Collection   getEmpresaSeccion()           Returns the current record's "EmpresaSeccion" collection
+ * @method Doctrine_Collection   getTipoVuelo()                Returns the current record's "TipoVuelo" collection
+ * @method Doctrine_Collection   getTipoMotivo()               Returns the current record's "TipoMotivo" collection
+ * @method Doctrine_Collection   getTipoLona()                 Returns the current record's "TipoLona" collection
+ * @method Doctrine_Collection   getTipoRestriciones()         Returns the current record's "TipoRestriciones" collection
+ * @method Doctrine_Collection   getTipoRecomendaciones()      Returns the current record's "TipoRecomendaciones" collection
+ * @method Doctrine_Collection   getGlobo()                    Returns the current record's "Globo" collection
  * @method Doctrine_Collection   getMantenimientoGlobo()       Returns the current record's "MantenimientoGlobo" collection
  * @method Doctrine_Collection   getProveedorVuelo()           Returns the current record's "ProveedorVuelo" collection
  * @method Doctrine_Collection   getVueloRestriciones()        Returns the current record's "VueloRestriciones" collection
@@ -169,10 +196,13 @@
  * @method Doctrine_Collection   getMarca()                    Returns the current record's "Marca" collection
  * @method Doctrine_Collection   getQuemador()                 Returns the current record's "Quemador" collection
  * @method Doctrine_Collection   getMantenimientoQuemador()    Returns the current record's "MantenimientoQuemador" collection
+ * @method Doctrine_Collection   getTipoCanastilla()           Returns the current record's "TipoCanastilla" collection
  * @method Doctrine_Collection   getCanastilla()               Returns the current record's "Canastilla" collection
  * @method Doctrine_Collection   getMantenimientoCanastilla()  Returns the current record's "MantenimientoCanastilla" collection
  * @method Doctrine_Collection   getTanque()                   Returns the current record's "Tanque" collection
  * @method Doctrine_Collection   getMantenimientoTanque()      Returns the current record's "MantenimientoTanque" collection
+ * @method Doctrine_Collection   getTipoHabitacion()           Returns the current record's "TipoHabitacion" collection
+ * @method Doctrine_Collection   getTipoCama()                 Returns the current record's "TipoCama" collection
  * @method Doctrine_Collection   getHospedaje()                Returns the current record's "Hospedaje" collection
  * @method Doctrine_Collection   getHospedajeHabitacion()      Returns the current record's "HospedajeHabitacion" collection
  * @method Doctrine_Collection   getGaleriaHospedaje()         Returns the current record's "GaleriaHospedaje" collection
@@ -203,7 +233,7 @@
  * @method Doctrine_Collection   getExcursionPolitica()        Returns the current record's "ExcursionPolitica" collection
  * @method Doctrine_Collection   getExcursionLugarInteres()    Returns the current record's "ExcursionLugarInteres" collection
  * @method Doctrine_Collection   getExcursionRequisito()       Returns the current record's "ExcursionRequisito" collection
- * @method Doctrine_Collection   getExcursionInclusion()       Returns the current record's "ExcursionInclusion" collection
+ * @method Doctrine_Collection   getExcursionIncluible()       Returns the current record's "ExcursionIncluible" collection
  * @method Doctrine_Collection   getExcursionHasAdicional()    Returns the current record's "ExcursionHasAdicional" collection
  * @method Doctrine_Collection   getExcursionHasPolitica()     Returns the current record's "ExcursionHasPolitica" collection
  * @method Doctrine_Collection   getExcursionHasLugarInteres() Returns the current record's "ExcursionHasLugarInteres" collection
@@ -243,6 +273,10 @@
  * @method sfGuardUser           setRememberKeys()             Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()           Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setPais()                     Sets the current record's "Pais" collection
+ * @method sfGuardUser           setRangoEdad()                Sets the current record's "RangoEdad" collection
+ * @method sfGuardUser           setTipoTarifa()               Sets the current record's "TipoTarifa" collection
+ * @method sfGuardUser           setTipoTarifaPrecio()         Sets the current record's "TipoTarifaPrecio" collection
+ * @method sfGuardUser           setTipoCliente()              Sets the current record's "TipoCliente" collection
  * @method sfGuardUser           setProveedor()                Sets the current record's "Proveedor" collection
  * @method sfGuardUser           setProveedorSucursal()        Sets the current record's "ProveedorSucursal" collection
  * @method sfGuardUser           setGaleriaProveedor()         Sets the current record's "GaleriaProveedor" collection
@@ -252,14 +286,22 @@
  * @method sfGuardUser           setProveedorPago()            Sets the current record's "ProveedorPago" collection
  * @method sfGuardUser           setCategoria()                Sets the current record's "Categoria" collection
  * @method sfGuardUser           setCiudad()                   Sets the current record's "Ciudad" collection
+ * @method sfGuardUser           setPago()                     Sets the current record's "Pago" collection
  * @method sfGuardUser           setProvincia()                Sets the current record's "Provincia" collection
  * @method sfGuardUser           setUbicacion()                Sets the current record's "Ubicacion" collection
+ * @method sfGuardUser           setGaleriaUbicacion()         Sets the current record's "GaleriaUbicacion" collection
  * @method sfGuardUser           setRede()                     Sets the current record's "Rede" collection
  * @method sfGuardUser           setCampo()                    Sets the current record's "Campo" collection
  * @method sfGuardUser           setCampoDescuento()           Sets the current record's "CampoDescuento" collection
  * @method sfGuardUser           setCategoriaFaq()             Sets the current record's "CategoriaFaq" collection
  * @method sfGuardUser           setDetalleFaq()               Sets the current record's "DetalleFaq" collection
  * @method sfGuardUser           setEmpresaSeccion()           Sets the current record's "EmpresaSeccion" collection
+ * @method sfGuardUser           setTipoVuelo()                Sets the current record's "TipoVuelo" collection
+ * @method sfGuardUser           setTipoMotivo()               Sets the current record's "TipoMotivo" collection
+ * @method sfGuardUser           setTipoLona()                 Sets the current record's "TipoLona" collection
+ * @method sfGuardUser           setTipoRestriciones()         Sets the current record's "TipoRestriciones" collection
+ * @method sfGuardUser           setTipoRecomendaciones()      Sets the current record's "TipoRecomendaciones" collection
+ * @method sfGuardUser           setGlobo()                    Sets the current record's "Globo" collection
  * @method sfGuardUser           setMantenimientoGlobo()       Sets the current record's "MantenimientoGlobo" collection
  * @method sfGuardUser           setProveedorVuelo()           Sets the current record's "ProveedorVuelo" collection
  * @method sfGuardUser           setVueloRestriciones()        Sets the current record's "VueloRestriciones" collection
@@ -271,10 +313,13 @@
  * @method sfGuardUser           setMarca()                    Sets the current record's "Marca" collection
  * @method sfGuardUser           setQuemador()                 Sets the current record's "Quemador" collection
  * @method sfGuardUser           setMantenimientoQuemador()    Sets the current record's "MantenimientoQuemador" collection
+ * @method sfGuardUser           setTipoCanastilla()           Sets the current record's "TipoCanastilla" collection
  * @method sfGuardUser           setCanastilla()               Sets the current record's "Canastilla" collection
  * @method sfGuardUser           setMantenimientoCanastilla()  Sets the current record's "MantenimientoCanastilla" collection
  * @method sfGuardUser           setTanque()                   Sets the current record's "Tanque" collection
  * @method sfGuardUser           setMantenimientoTanque()      Sets the current record's "MantenimientoTanque" collection
+ * @method sfGuardUser           setTipoHabitacion()           Sets the current record's "TipoHabitacion" collection
+ * @method sfGuardUser           setTipoCama()                 Sets the current record's "TipoCama" collection
  * @method sfGuardUser           setHospedaje()                Sets the current record's "Hospedaje" collection
  * @method sfGuardUser           setHospedajeHabitacion()      Sets the current record's "HospedajeHabitacion" collection
  * @method sfGuardUser           setGaleriaHospedaje()         Sets the current record's "GaleriaHospedaje" collection
@@ -305,7 +350,7 @@
  * @method sfGuardUser           setExcursionPolitica()        Sets the current record's "ExcursionPolitica" collection
  * @method sfGuardUser           setExcursionLugarInteres()    Sets the current record's "ExcursionLugarInteres" collection
  * @method sfGuardUser           setExcursionRequisito()       Sets the current record's "ExcursionRequisito" collection
- * @method sfGuardUser           setExcursionInclusion()       Sets the current record's "ExcursionInclusion" collection
+ * @method sfGuardUser           setExcursionIncluible()       Sets the current record's "ExcursionIncluible" collection
  * @method sfGuardUser           setExcursionHasAdicional()    Sets the current record's "ExcursionHasAdicional" collection
  * @method sfGuardUser           setExcursionHasPolitica()     Sets the current record's "ExcursionHasPolitica" collection
  * @method sfGuardUser           setExcursionHasLugarInteres() Sets the current record's "ExcursionHasLugarInteres" collection
@@ -495,6 +540,22 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
+        $this->hasMany('RangoEdad', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoTarifa', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoTarifaPrecio', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoCliente', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('Proveedor', array(
              'local' => 'id',
              'foreign' => 'user_id'));
@@ -531,11 +592,19 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
+        $this->hasMany('Pago', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('Provincia', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
         $this->hasMany('Ubicacion', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('GaleriaUbicacion', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
@@ -560,6 +629,30 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasMany('EmpresaSeccion', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoVuelo', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoMotivo', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoLona', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoRestriciones', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoRecomendaciones', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Globo', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
@@ -607,6 +700,10 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
+        $this->hasMany('TipoCanastilla', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('Canastilla', array(
              'local' => 'id',
              'foreign' => 'user_id'));
@@ -620,6 +717,14 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasMany('MantenimientoTanque', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoHabitacion', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('TipoCama', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
@@ -743,7 +848,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('ExcursionInclusion', array(
+        $this->hasMany('ExcursionIncluible', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

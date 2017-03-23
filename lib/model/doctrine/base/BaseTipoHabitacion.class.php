@@ -16,6 +16,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoHabitacion', 'doctrine');
  * @property integer $user_id
  * @property string $user_name
  * @property Empresa $Empresa
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $HospedajeHabitacion
  * 
  * @method integer             getId()                  Returns the current record's "id" value
@@ -27,6 +28,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoHabitacion', 'doctrine');
  * @method integer             getUserId()              Returns the current record's "user_id" value
  * @method string              getUserName()            Returns the current record's "user_name" value
  * @method Empresa             getEmpresa()             Returns the current record's "Empresa" value
+ * @method sfGuardUser         getSfGuardUser()         Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getHospedajeHabitacion() Returns the current record's "HospedajeHabitacion" collection
  * @method TipoHabitacion      setId()                  Sets the current record's "id" value
  * @method TipoHabitacion      setEmpresaId()           Sets the current record's "empresa_id" value
@@ -37,6 +39,7 @@ Doctrine_Manager::getInstance()->bindComponent('TipoHabitacion', 'doctrine');
  * @method TipoHabitacion      setUserId()              Sets the current record's "user_id" value
  * @method TipoHabitacion      setUserName()            Sets the current record's "user_name" value
  * @method TipoHabitacion      setEmpresa()             Sets the current record's "Empresa" value
+ * @method TipoHabitacion      setSfGuardUser()         Sets the current record's "sfGuardUser" value
  * @method TipoHabitacion      setHospedajeHabitacion() Sets the current record's "HospedajeHabitacion" collection
  * 
  * @package    hub-usmjesus
@@ -129,6 +132,10 @@ abstract class BaseTipoHabitacion extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE',
              'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
 
         $this->hasMany('HospedajeHabitacion', array(
              'local' => 'id',
